@@ -1,0 +1,113 @@
+.containerbg{
+
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    background-image: url("../../../public/images/5985dcd8399f94000113ebf4_img-bg-header-home.jpg.jpeg");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    background-repeat: no-repeat;
+}
+.papierbg{
+    height: 30%;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    background-image: url("../../../public/images/59dcd192a377e500011be184_mascara-tijolos-header-1800px.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.title{
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    height: 40%;
+    width: 50%;
+    color: #fff;
+    font-size: 2rem;
+    margin-bottom: 4em;
+    font-weight: 600;
+}
+.title h1{
+    font-size: clamp(4rem, 9vw, 14rem);
+    font-weight: 900;
+    font-family: 'Bebas Neue', 'Impact', 'Arial Black', 'Helvetica Black', sans-serif;
+    letter-spacing: 10px;
+    text-transform: uppercase;
+    /* Relief et ombres multiples - lueur réduite */
+    text-shadow: 
+        0 0 5px rgba(255, 255, 255, 0.3),
+        0 0 10px rgba(255, 255, 255, 0.2),
+        0 0 15px rgba(255, 255, 255, 0.1),
+        2px 2px 4px rgba(0, 0, 0, 0.8),
+        4px 4px 8px rgba(0, 0, 0, 0.6),
+        6px 6px 12px rgba(0, 0, 0, 0.4);
+    font-stretch: expanded;
+    line-height: 0.8;
+    width: 100%;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    /* Animation de pulsation */
+    animation: titleGlow 3s ease-in-out infinite alternate;
+}
+
+/* Animation de relief pour le titre - lueur réduite */
+@keyframes titleGlow {
+    0% {
+        text-shadow: 
+            0 0 5px rgba(255, 255, 255, 0.3),
+            0 0 10px rgba(255, 255, 255, 0.2),
+            0 0 15px rgba(255, 255, 255, 0.1),
+            2px 2px 4px rgba(0, 0, 0, 0.8),
+            4px 4px 8px rgba(0, 0, 0, 0.6),
+            6px 6px 12px rgba(0, 0, 0, 0.4);
+    }
+    100% {
+        text-shadow: 
+            0 0 8px rgba(255, 255, 255, 0.4),
+            0 0 15px rgba(255, 255, 255, 0.3),
+            0 0 20px rgba(255, 255, 255, 0.2),
+            2px 2px 4px rgba(0, 0, 0, 0.8),
+            4px 4px 8px rgba(0, 0, 0, 0.6),
+            6px 6px 12px rgba(0, 0, 0, 0.4);
+    }
+}
+
+.title svg{
+    font-size: clamp(4rem, 10vw, 15rem);
+    /* Animation de coupe pour le ciseau - lueur réduite */
+    animation: scissorsCut 2s ease-in-out infinite;
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.4));
+}
+
+/* Animation de coupe pour le ciseau - lueur réduite */
+@keyframes scissorsCut {
+    0% {
+        transform: rotate(0deg) scale(1);
+        filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.4));
+    }
+    25% {
+        transform: rotate(-15deg) scale(1.1);
+        filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.5));
+    }
+    50% {
+        transform: rotate(0deg) scale(1);
+        filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.4));
+    }
+    75% {
+        transform: rotate(15deg) scale(1.1);
+        filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.5));
+    }
+    100% {
+        transform: rotate(0deg) scale(1);
+        filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.4));
+    }
+}

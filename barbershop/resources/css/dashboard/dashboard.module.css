@@ -1,0 +1,507 @@
+.dashboardContainer {
+    min-height: 100vh;
+    width: 100%;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    padding: 2rem;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.dashboardHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    border: 1px solid rgba(197, 133, 34, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.dashboardTitle {
+    color: #800000;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 0;
+    background: linear-gradient(135deg, #800000 0%, #C58522 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.dateSelector {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.7);
+    padding: 0.5rem;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(197, 133, 34, 0.1);
+}
+
+.dateButton {
+    padding: 0.75rem 1.5rem;
+    background: transparent;
+    color: #563737;
+    border: none;
+    border-radius: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    font-family: inherit;
+    font-size: 0.9rem;
+}
+
+.dateButton:hover {
+    background: rgba(197, 133, 34, 0.1);
+    color: #C58522;
+    transform: translateY(-1px);
+}
+
+.dateButton.active {
+    background: linear-gradient(135deg, #800000 0%, #C58522 100%);
+    color: white;
+    box-shadow: 0 4px 15px rgba(197, 133, 34, 0.4);
+}
+
+.statsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.statCard {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    padding: 2rem;
+    border: 1px solid rgba(197, 133, 34, 0.2);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.statCard::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #800000, #C58522);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.statCard:hover::before {
+    transform: scaleX(1);
+}
+
+.statCard:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    border-color: rgba(197, 133, 34, 0.4);
+}
+
+.statHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.statTitle {
+    color: #563737;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.statIcon {
+    width: 3.5rem;
+    height: 3.5rem;
+    background: linear-gradient(135deg, #800000 0%, #C58522 100%);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.5rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.statCard:hover .statIcon {
+    transform: rotate(5deg) scale(1.05);
+    box-shadow: 0 8px 25px rgba(197, 133, 34, 0.3);
+}
+
+.statValue {
+    font-size: 2.5rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #800000 0%, #C58522 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 0.5rem;
+}
+
+.statChange {
+    font-size: 0.875rem;
+    color: #28a745;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.chartContainer {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    padding: 2rem;
+    border: 1px solid rgba(197, 133, 34, 0.2);
+    margin-bottom: 2rem;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.chartContainer:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.chartTitle {
+    color: #800000;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    text-align: center;
+    background: linear-gradient(135deg, #800000 0%, #C58522 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.chartGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.lineChartContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.lineChart {
+    height: 300px;
+    position: relative;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 15px;
+    padding: 1.5rem;
+    border: 1px solid rgba(197, 133, 34, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 300px;
+}
+
+.lineChartCanvas {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #800000;
+    font-size: 1.1rem;
+    font-weight: 600;
+    position: relative;
+}
+
+.chartLegend {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+}
+
+.legendItem {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    color: #563737;
+    font-weight: 500;
+}
+
+.legendColor {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.recentActivity {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    padding: 2rem;
+    border: 1px solid rgba(197, 133, 34, 0.2);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.recentActivity:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.activityTitle {
+    color: #800000;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    text-align: center;
+    background: linear-gradient(135deg, #800000 0%, #C58522 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.activityList {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.activityItem {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.25rem;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 15px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid rgba(197, 133, 34, 0.1);
+}
+
+.activityItem:hover {
+    background: rgba(197, 133, 34, 0.05);
+    transform: translateX(8px);
+    border-color: rgba(197, 133, 34, 0.3);
+}
+
+.activityIcon {
+    width: 3rem;
+    height: 3rem;
+    background: linear-gradient(135deg, #800000 0%, #C58522 100%);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.25rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.activityItem:hover .activityIcon {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 8px 20px rgba(197, 133, 34, 0.3);
+}
+
+.activityContent {
+    flex: 1;
+}
+
+.activityText {
+    color: #563737;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+    font-size: 0.95rem;
+}
+
+.activityTime {
+    color: #6c757d;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.activityAmount {
+    color: #28a745;
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+/* Animations pour les courbes dynamiques */
+@keyframes dash {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Animation pour les points de données */
+.lineChartCanvas circle {
+    animation: pulse 2s ease-in-out infinite;
+}
+
+/* Animation pour les courbes */
+.lineChartCanvas path {
+    animation: dash 2s ease-in-out;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .chartGrid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .lineChart {
+        height: 300px;
+        min-height: 300px;
+    }
+}
+
+@media (max-width: 768px) {
+    .dashboardContainer {
+        padding: 1rem;
+    }
+    
+    .dashboardHeader {
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 1.5rem;
+    }
+    
+    .dashboardTitle {
+        font-size: 2rem;
+    }
+    
+    .dateSelector {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .statsGrid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .statCard {
+        padding: 1.5rem;
+    }
+    
+    .statValue {
+        font-size: 2rem;
+    }
+    
+    .chartContainer {
+        padding: 1.5rem;
+    }
+    
+    .chartTitle {
+        font-size: 1.25rem;
+    }
+    
+    .lineChart {
+        height: 350px;
+        min-height: 350px;
+        padding: 1rem;
+    }
+    
+    .chartLegend {
+        gap: 1rem;
+    }
+    
+    .recentActivity {
+        padding: 1.5rem;
+    }
+    
+    .activityTitle {
+        font-size: 1.25rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .dashboardContainer {
+        padding: 0.5rem;
+    }
+    
+    .dashboardHeader {
+        padding: 1rem;
+    }
+    
+    .dashboardTitle {
+        font-size: 1.5rem;
+    }
+    
+    .dateButton {
+        padding: 0.5rem 1rem;
+        font-size: 0.8rem;
+    }
+    
+    .statsGrid {
+        gap: 0.75rem;
+    }
+    
+    .statCard {
+        padding: 1rem;
+    }
+    
+    .statValue {
+        font-size: 1.75rem;
+    }
+    
+    .statTitle {
+        font-size: 0.9rem;
+    }
+    
+    .chartContainer {
+        padding: 1rem;
+    }
+    
+    .lineChart {
+        height: 400px;
+        min-height: 400px;
+        padding: 0.75rem;
+    }
+    
+    .recentActivity {
+        padding: 1rem;
+    }
+    
+    .activityItem {
+        padding: 1rem;
+    }
+    
+    .activityIcon {
+        width: 2.5rem;
+        height: 2.5rem;
+        font-size: 1rem;
+    }
+} 

@@ -1,0 +1,663 @@
+.containercontent{
+    height: 100vh;
+    width: 100%;
+    background-image: url("../../../public/images/5985dcd39abf440001d1ff06_bg-text-branca.jpg.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    gap: 3em;
+    gap: 20px;
+    padding: 20px;
+}
+.containerphoto{
+    height: 90%;
+    width: 40%;
+    background-image: url("../../../public/images/59c48c1cb7ea86000189d6ae_cadeira-slide-intro.jpg.jpeg");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.containertext{
+    height: 60%;
+    width: 45%;
+    background-size: cover;
+    display: flex;
+    align-content: center;
+    padding: 1em;
+    border-radius: 1em;
+    border: 1px solid #563737;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.containertext h1 {
+    color: #800000;
+    height: 20%;
+    width: 100%;
+    display: flex;
+    align-content: center;
+    background-color: #fff;
+    align-items: center;
+    justify-content: flex-end;
+    font-family: 'Playfair Display', 'Cinzel', 'Abril Fatface', 'Bebas Neue', 'Oswald', serif;
+    font-size: 2em;
+    font-weight: 900;
+    letter-spacing: 5px;
+    text-align: right;
+}
+
+.containertext div {
+    font-size: 1.2em;
+    font-weight: 900;
+    letter-spacing: 5px;
+    text-align: right;
+}
+
+.highlightedText {
+    color: #C58522;
+}
+.highlightedTextbold {
+    color: #C58522;
+    font-weight: bold;
+    font-size: 1.1em;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
+
+.lieucontainer{
+    height: 100vh;
+    width: 100%;
+    background-image: url("../../../public/images/5985dcd399d894000123ef02_bg-tigolos.jpg.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    flex-direction: column;
+    justify-content: center;
+}
+.logocont{
+    aspect-ratio: 1/1;
+    width: 10%;
+    background-image: url("../../../public/images/barberlogo.png");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    border: 1px solid #563737;
+    margin-bottom: 2em;
+}
+.textlieu{
+    height: 70%;
+    width: 80%;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.textlieu h1{
+    color: #C58522;
+    font-family: 'Playfair Display', 'Cinzel', 'Abril Fatface', 'Bebas Neue', 'Oswald', serif;
+    font-size: 3em;
+    font-weight: 900;
+    letter-spacing: 5px;
+    text-align: center;
+}
+.textlieu div{
+    font-size: 1.6em;
+    font-weight: 900;
+    letter-spacing: 5px;
+    font-weight: bold;
+    text-align: center;
+    color: #bbb;
+}
+.lieuxboxcontainer{
+    height: 90%;
+    width: 100%;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    gap: 2em;
+}
+.lieuxbox{
+    height: 90%;
+    width: 40%;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 0.5em;
+    border: 2px solid #fff;
+    border-radius: 1em;
+    padding: 1em;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.lieuxbox::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.lieuxbox:hover::before {
+    left: 100%;
+}
+
+.lieuxbox:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    border-color: #C58522;
+    background: rgba(255, 255, 255, 0.2);
+}
+.lieupos{
+    aspect-ratio: 1/1;
+    width: 18%;
+    background-size: cover;
+    background-color: #db9326;
+    border-radius: 1em;
+    color: #ffffff;
+    font-size: 1.5em;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #563737;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.lieuxbox:hover .lieupos {
+    transform: rotate(360deg) scale(1.1);
+    background-color: #C58522;
+    box-shadow: 0 0 20px rgba(197, 133, 34, 0.6);
+}
+.lieuxbox samp{
+    font-size: 1em;
+    font-weight: 900;
+    font-family: 'Playfair Display', 'Cinzel', 'Abril Fatface', 'Bebas Neue', 'Oswald', serif;
+    letter-spacing: 7px;
+    font-weight: bold;
+    text-align: center;
+    color: #db9326;
+    transition: all 0.3s ease;
+}
+
+.lieuxbox:hover samp {
+    color: #C58522;
+    transform: scale(1.05);
+    text-shadow: 0 0 10px rgba(197, 133, 34, 0.5);
+}
+.lieuxbox span{
+    font-size: 0.75em;
+    font-weight: 900;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    letter-spacing: 7px;
+    font-weight: bold;
+    text-align: center;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.lieuxbox:hover span {
+    color: #C58522;
+    transform: scale(1.02);
+}
+.lieuxbox h3{
+    font-size: 0.5em;
+    font-weight: 900;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    letter-spacing: 7px;
+    font-weight: bold;
+    text-align: center;
+    font-weight: bold;
+}
+
+
+.contactsbox{
+    position: relative;
+    height: 140vh;
+    width: 100%;
+    background-color: #fff;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    background-image: url("../../../public/images/5985dcd39abf440001d1ff06_bg-text-branca.jpg.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    flex-direction: column;
+}
+.boxtransition{
+    position: absolute;
+    top: 0;
+    height: 20%;
+    width: 100%;
+    background-image: url("../../../public/images/59863aff1c3cee0001f83906_mascara-tijolos-bottom.jpg.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.contactsbox h1{
+    color: #C58522;
+    font-family: 'Playfair Display', 'Cinzel', 'Abril Fatface', 'Bebas Neue', 'Oswald', serif;
+    font-size: 3em;
+    font-weight: 900;
+    letter-spacing: 5px;
+    text-align: center;
+}
+
+.contactsboxcontainer{
+    height: 40%;
+    width: 100%;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 1.5em;
+}
+
+
+.lieuxboxnum{
+    height: 90%;
+    width: 60%;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 0.5em;
+    border: 2px solid #fff;
+    border-radius: 1em;
+    padding: 1em;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.lieuxboxnum::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.lieuxboxnum:hover::before {
+    left: 100%;
+}
+
+.lieuxboxnum:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    border-color: #C58522;
+    background: rgba(255, 255, 255, 0.2);
+}
+.lieuposnum{
+    aspect-ratio: 1/1;
+    width: 13%;
+    background-size: cover;
+    background-color: #db9326;
+    border-radius: 50%;
+    color: #ffffff;
+    font-size: 1.5em;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #563737;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.lieuxboxnum:hover .lieuposnum {
+    transform: rotate(360deg) scale(1.1);
+    background-color: #C58522;
+    box-shadow: 0 0 20px rgba(197, 133, 34, 0.6);
+}
+.lieuxboxnum samp{
+    font-size: 1.5em;
+    font-weight: 900;
+    font-family: 'Playfair Display', 'Cinzel', 'Abril Fatface', 'Bebas Neue', 'Oswald', serif;
+    letter-spacing: 7px;
+    font-weight: bold;
+    text-align: center;
+    color: #db9326;
+    transition: all 0.3s ease;
+}
+
+.lieuxboxnum:hover samp {
+    color: #C58522;
+    transform: scale(1.05);
+    text-shadow: 0 0 10px rgba(197, 133, 34, 0.5);
+}
+
+
+.lieuxboxnum h3{
+    font-size: 1em;
+    font-weight: 900;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    letter-spacing: 7px;
+    font-weight: bold;
+    text-align: center;
+    font-weight: bold;
+}
+.titlecontactsresaux1{
+    height: 8%;
+    position:absolute;
+    bottom: 2.5em;
+    right: 7em;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    background: linear-gradient(45deg, #000000, #171717, #212021);
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+    font-size: 2em;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.titlecontactsresaux1:hover {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+    background: linear-gradient(45deg, #353535, #2e2e2e, #000000);
+}
+.titlecontactsresaux2{
+    height: 8%;
+    position:absolute;
+    bottom: 1.5em;
+    right: 4em;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+    font-size: 2em;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.titlecontactsresaux2:hover {
+    transform: scale(1.1) rotate(-5deg);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+    background: linear-gradient(45deg, #bc1888, #cc2366, #dc2743, #e6683c, #f09433);
+}
+.titlecontactsresaux3{
+    height: 8%;
+    position:absolute;
+    bottom: 4em;
+    right: 5em;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    background: linear-gradient(45deg, #1877f2, #42a5f5, #2196f3);
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+    font-size: 2em;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.titlecontactsresaux3:hover {
+    transform: scale(1.1) rotate(3deg);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+    background: linear-gradient(45deg, #2196f3, #42a5f5, #1877f2);
+}
+.titlecontactsresaux4{
+    height: 8%;
+    position:absolute;
+    bottom: 2.5em;
+    left: 2em;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    height: 4em;
+    width: 57%;
+    gap: 1em;
+    justify-content: center;
+    font-size: 1.5em;
+    font-weight: 900;
+    font-family: 'Playfair Display', 'Cinzel', 'Abril Fatface', 'Bebas Neue', 'Oswald', serif;
+    letter-spacing: 7px;
+    font-weight: bold;
+    text-align: center;
+    color: #db9326;
+    transition: all 0.3s ease;
+}
+
+.servicescontainer{
+    height: 140vh;
+    width: 100%;
+    padding: 2em;
+    background-image: url("../../../public/images/5985dcd39abf440001d1ff06_bg-text-branca.jpg.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.textservices{
+    height: 80%;
+    width: 80%;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.textservices h1{
+    color: #800000;
+    font-family: 'Playfair Display', 'Cinzel', 'Abril Fatface', 'Bebas Neue', 'Oswald', serif;
+    font-size: 2.5em;
+    font-weight: 900;
+    letter-spacing: 5px;
+    text-align: center;
+    margin-bottom: 1.5em;
+}
+
+.textservices div p{
+    font-size: 1.2em;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-align: center;
+    color: #333;
+    margin-bottom: 3em;
+}
+
+.servicesgrid{
+    height: 85%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3em;
+    padding: 2em;
+}
+
+.servicebox{
+    height: 100%;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5em;
+    flex-direction: column;
+    gap: 1.5em;
+    border: 2px solid #C58522;
+    border-radius: 1em;
+    padding: 2.5em;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.servicebox::before {
+    content: '';
+        padding: 0.5em;
+
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(197, 133, 34, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.servicebox:hover::before {
+    left: 100%;
+}
+
+.servicebox:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 20px 40px rgba(197, 133, 34, 0.3);
+    border-color: #800000;
+    background: rgba(255, 255, 255, 1);
+}
+
+.serviceicon{
+    aspect-ratio: 1/1;
+    width: 30%;
+    background-size: cover;
+    background-color: #C58522;
+    border-radius: 50%;
+    color: #ffffff;
+    font-size: 2.5em;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #800000;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.servicebox:hover .serviceicon {
+    transform: rotate(360deg) scale(1.2);
+    background-color: #800000;
+    box-shadow: 0 0 25px rgba(128, 0, 0, 0.6);
+}
+
+.servicebox h3{
+    font-size: 1.3em;
+    font-weight: 800;
+    font-family: 'Playfair Display', 'Cinzel', 'Abril Fatface', 'Bebas Neue', 'Oswald', serif;
+    letter-spacing: 2px;
+    text-align: center;
+    color: #800000;
+    margin: 0;
+    transition: all 0.3s ease;
+}
+
+.servicebox:hover h3 {
+    color: #C58522;
+    transform: scale(1.1);
+}
+
+.servicebox p{
+    font-size: 0.em;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-align: center;
+    color: #666;
+    margin: 0;
+    transition: all 0.3s ease;
+}
+
+.servicebox:hover p {
+    color: #333;
+    transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+    .servicesgrid{
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2em;
+        height: 80%;
+    }
+    
+    .textservices h1{
+        font-size: 2em;
+    }
+    
+    .textservices div p{
+        font-size: 1em;
+    }
+    
+    .servicebox{
+        padding: 2em;
+        height: 110%;
+    }
+}
+
+@media (max-width: 480px) {
+    .servicesgrid{
+        grid-template-columns: 1fr;
+        gap: 2em;
+        height: 75%;
+    }
+    
+    .servicebox{
+        padding: 2em;
+        height: 100%;
+    }
+    
+    .serviceicon{
+        width: 25%;
+        font-size: 2em;
+    }
+}
