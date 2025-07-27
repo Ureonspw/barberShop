@@ -49,4 +49,35 @@ class SalonController extends Controller
         }
 
     }
+
+    /**
+     * Supprimer un salon
+     */
+    public function destroy($id_salon): RedirectResponse
+    {
+        try {
+            $salon = Salon::findOrFail($id_salon);
+            
+            // Vérifier que l'utilisateur connecté est l'admin du salon
+            if ($salon->id_admin !== Auth::id()) {
+                return redirect()->back()->with('error', 'Vous n\'êtes pas autorisé à supprimer ce salon.');
+            }
+            
+            $salonName = $salon->nom;
+            $salon->delete();
+            
+            Log::info('Salon supprimé avec succès.', ['salon_id' => $id_salon, 'salon_name' => $salonName]);
+            
+            return redirect()->back()->with('success', "Le salon '$salonName' a été supprimé avec succès !");
+            
+        } catch (\Exception $e) {
+            Log::error('Erreur lors de la suppression du salon.', [
+                'salon_id' => $id_salon,
+                'message' => $e->getMessage(),
+                'trace' => $e->getTraceAsString(),
+            ]);
+            
+            return redirect()->back()->with('error', 'Une erreur est survenue lors de la suppression du salon.');
+        }
+    }
 }

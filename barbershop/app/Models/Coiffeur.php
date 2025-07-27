@@ -13,7 +13,7 @@ class Coiffeur extends Model
     protected $primaryKey = 'id_coiffeur';
 
     protected $fillable = [
-        'nom',
+        'nom', 
         'specialite',
         'disponibilite',
         'id_salon'

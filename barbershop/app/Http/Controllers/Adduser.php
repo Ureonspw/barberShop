@@ -70,6 +70,37 @@ class Adduser extends Controller
             ]);
     
             return redirect()->back()->with('error', 'Une erreur est survenue lors de la création de l\'utilisateur.');
+        } 
+    }
+
+    /**
+     * Supprimer un utilisateur
+     */
+    public function destroy($id_user): RedirectResponse
+    {
+        try {
+            $user = User::findOrFail($id_user);
+            
+            // Empêcher la suppression de l'utilisateur connecté
+            if ($user->id_user === Auth::id()) {
+                return redirect()->back()->with('error', 'Vous ne pouvez pas supprimer votre propre compte.');
+            }
+            
+            $userName = $user->name;
+            $user->delete();
+            
+            Log::info('Utilisateur supprimé avec succès.', ['user_id' => $id_user, 'user_name' => $userName]);
+            
+            return redirect()->back()->with('success', "L'utilisateur '$userName' a été supprimé avec succès !");
+            
+        } catch (\Exception $e) {
+            Log::error('Erreur lors de la suppression de l\'utilisateur.', [
+                'user_id' => $id_user,
+                'message' => $e->getMessage(),
+                'trace' => $e->getTraceAsString(),
+            ]);
+            
+            return redirect()->back()->with('error', 'Une erreur est survenue lors de la suppression de l\'utilisateur.');
         }
     }
     

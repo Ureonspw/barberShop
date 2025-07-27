@@ -42,15 +42,23 @@ export default function PopupForm({ onClose, title }: { onClose: () => void; tit
     };
 
     return (
-        <div className={Classes.overlay}>
+        <div className={Classes.overlay} onClick={(e) => e.target === e.currentTarget && onClose()}>
             <div className={Classes.popup}>
-                <h2>{title}</h2>
+                <h2>👤 {title}</h2>
 
-                {successMessage && <div className="mb-4 text-green-400 text-center">{successMessage}</div>}
-                {errorMessage && <div className="mb-4 text-red-400 text-center">{errorMessage}</div>}
+                {successMessage && (
+                    <div className="mb-4 text-green-400">
+                        ✅ {successMessage}
+                    </div>
+                )}
+                {errorMessage && (
+                    <div className="mb-4 text-red-400">
+                        ❌ {errorMessage}
+                    </div>
+                )}
 
                 <form onSubmit={submit}>
-                    <InputLabel htmlFor="name" value="Nom" />
+                    <InputLabel htmlFor="name" value="Nom d'utilisateur" />
                     <TextInput
                         id="name"
                         name="name"
@@ -58,11 +66,11 @@ export default function PopupForm({ onClose, title }: { onClose: () => void; tit
                         className={Classes.input}
                         onChange={(e) => setData('name', e.target.value)}
                         required
-                        placeholder="Entrez un nom"
+                        placeholder="Entrez le nom d'utilisateur"
                     />
                     <InputError message={errors.name} className={Classes.error} />
 
-                    <InputLabel htmlFor="email" value="Email" />
+                    <InputLabel htmlFor="email" value="Adresse email" />
                     <TextInput
                         id="email"
                         type="email"
@@ -71,11 +79,11 @@ export default function PopupForm({ onClose, title }: { onClose: () => void; tit
                         className={Classes.input}
                         onChange={(e) => setData('email', e.target.value)}
                         required
-                        placeholder="Entrez un email"
+                        placeholder="Entrez l'adresse email"
                     />
                     <InputError message={errors.email} className={Classes.error} />
 
-                    <InputLabel htmlFor="role" value="Role" />
+                    <InputLabel htmlFor="role" value="Rôle utilisateur" />
                     <select
                         id="role"
                         name="role"
@@ -83,8 +91,8 @@ export default function PopupForm({ onClose, title }: { onClose: () => void; tit
                         value={data.role}
                         onChange={(e) => setData('role', e.target.value)}
                     >
-                        <option value="caissier">Caissier</option>
-                        <option value="admin">Admin</option>
+                        <option value="caissier">💰 Caissier</option>
+                        <option value="admin">👑 Administrateur</option>
                     </select>
                     <InputError message={errors.role} className={Classes.error} />
 
@@ -97,11 +105,11 @@ export default function PopupForm({ onClose, title }: { onClose: () => void; tit
                         className={Classes.input}
                         onChange={(e) => setData('password', e.target.value)}
                         required
-                        placeholder="Mot de passe"
+                        placeholder="Entrez le mot de passe"
                     />
                     <InputError message={errors.password} className={Classes.error} />
 
-                    <InputLabel htmlFor="password_confirmation" value="Confirmer le mot de passe" />
+                    <InputLabel htmlFor="password_confirmation" value="Confirmation du mot de passe" />
                     <TextInput
                         id="password_confirmation"
                         type="password"
@@ -110,16 +118,24 @@ export default function PopupForm({ onClose, title }: { onClose: () => void; tit
                         className={Classes.input}
                         onChange={(e) => setData('password_confirmation', e.target.value)}
                         required
-                        placeholder="Confirmation"
+                        placeholder="Confirmez le mot de passe"
                     />
                     <InputError message={errors.password_confirmation} className={Classes.error} />
 
                     <div className={Classes.btns}>
-                        <button type="submit" className={Classes.validateBtn} disabled={processing}>
-                            Enregistrer
+                        <button 
+                            type="submit" 
+                            className={Classes.validateBtn} 
+                            disabled={processing}
+                        >
+                            {processing ? "⏳ Enregistrement..." : "💾 Enregistrer"}
                         </button>
-                        <button type="button" className={Classes.cancelBtn} onClick={onClose}>
-                            Annuler
+                        <button 
+                            type="button" 
+                            className={Classes.cancelBtn} 
+                            onClick={onClose}
+                        >
+                            ❌ Annuler
                         </button>
                     </div>
                 </form>

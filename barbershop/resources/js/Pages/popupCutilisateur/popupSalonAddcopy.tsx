@@ -17,6 +17,7 @@ export default function PopupFormSalon({ onClose, title }: { onClose: () => void
     const { props } = usePage();
     const [successMessage, setSuccessMessage] = useState<string | null>(null);
     const [errorMessage, setErrorMessage] = useState<string | null>(null);
+    
     useEffect(() => {
         const flash = props.flash as { success?: string; error?: string };
         if (flash?.success) {
@@ -39,30 +40,36 @@ export default function PopupFormSalon({ onClose, title }: { onClose: () => void
         });
     };
 
-
     return (
-        <div className={Classes.overlay}>
+        <div className={Classes.overlay} onClick={(e) => e.target === e.currentTarget && onClose()}>
             <div className={Classes.popup}>
-                <h2>{title}</h2>
+                <h2>🏪 {title}</h2>
+                
                 {successMessage && (
-                    <div className="mb-4 text-green-400 text-center">{successMessage}</div>
+                    <div className="mb-4 text-green-400">
+                        ✅ {successMessage}
+                    </div>
                 )}
                 {errorMessage && (
-                    <div className="mb-4 text-red-400 text-center">{errorMessage}</div>
+                    <div className="mb-4 text-red-400">
+                        ❌ {errorMessage}
+                    </div>
                 )}
+                
                 <form onSubmit={submit}>
-                <TextInput
+                    <InputLabel htmlFor="name" value="Nom du Salon" />
+                    <TextInput
                         id="name"
                         name="name"
                         value={data.name}
                         className={Classes.input}
                         onChange={(e) => setData('name', e.target.value)}
                         required
-                        placeholder="Entrez un nom"
+                        placeholder="Entrez le nom du salon"
                     />
                     <InputError message={errors.name} className={Classes.error} />
 
-                    <InputLabel htmlFor="adresse" value="adresse" />
+                    <InputLabel htmlFor="adresse" value="Adresse du Salon" />
                     <TextInput
                         id="adresse"
                         type="text"
@@ -71,13 +78,25 @@ export default function PopupFormSalon({ onClose, title }: { onClose: () => void
                         className={Classes.input}
                         onChange={(e) => setData('adresse', e.target.value)}
                         required
-                        placeholder="Entrez votre addresse"
+                        placeholder="Entrez l'adresse du salon"
                     />
                     <InputError message={errors.adresse} className={Classes.error} />
 
                     <div className={Classes.btns}>
-                        <button type="submit" className={Classes.validateBtn}>Enregistrer</button>
-                        <button type="button" onClick={onClose} className={Classes.cancelBtn}>Annuler</button>
+                        <button 
+                            type="submit" 
+                            className={Classes.validateBtn}
+                            disabled={processing}
+                        >
+                            {processing ? "⏳ Enregistrement..." : "💾 Enregistrer"}
+                        </button>
+                        <button 
+                            type="button" 
+                            onClick={onClose} 
+                            className={Classes.cancelBtn}
+                        >
+                            ❌ Annuler
+                        </button>
                     </div>
                 </form>
             </div>

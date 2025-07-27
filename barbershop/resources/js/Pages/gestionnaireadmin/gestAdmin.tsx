@@ -12,30 +12,56 @@ import PopupForm from "@/Pages/popupCutilisateur/popuputilisateur";
 import PopupFormcoiffeur from "@/Pages/popupCutilisateur/popupcoiffeuradd";
 import PopupFormSalon from "@/Pages/popupCutilisateur/popupSalonAddcopy";
 import PopupFormClient from "@/Pages/popupCutilisateur/popupClientAddcopy";
-
+// Import des popups de suppression
+import PopupDeleteUser from "@/Pages/popupCutilisateur/popupDeleteUser";
+import PopupDeleteCoiffeur from "@/Pages/popupCutilisateur/popupDeleteCoiffeur";
+import PopupDeleteSalon from "@/Pages/popupCutilisateur/popupDeleteSalon";
+import PopupDeleteClient from "@/Pages/popupCutilisateur/popupDeleteClient";
+import { usePage } from "@inertiajs/react";
 import Classes from "../../../css/gestAdmin/admingest.module.css";
 
 export default function GestionnaireAdmin() {
     const [isPopupOpen, setIsPopupOpen] = useState(false);
     const openPopup = () => setIsPopupOpen(true);
     const closePopup = () => setIsPopupOpen(false);
+    
+    // États pour les popups de suppression
+    const [isDeleteUserPopupOpen, setIsDeleteUserPopupOpen] = useState(false);
+    const openDeleteUserPopup = () => setIsDeleteUserPopupOpen(true);
+    const closeDeleteUserPopup = () => setIsDeleteUserPopupOpen(false);
+    
     const [isCoiffeurPopupOpen, setIsCoiffeurPopupOpen] = useState(false);
-
+    const { salons, counts } = usePage().props as { salons?: any; counts?: any };
+    console.log("salons props:", salons);
     const openCoiffeurPopup = () => setIsCoiffeurPopupOpen(true);
     const closeCoiffeurPopup = () => setIsCoiffeurPopupOpen(false);
-
+    
+    // États pour les popups de suppression de coiffeurs
+    const [isDeleteCoiffeurPopupOpen, setIsDeleteCoiffeurPopupOpen] = useState(false);
+    const openDeleteCoiffeurPopup = () => setIsDeleteCoiffeurPopupOpen(true);
+    const closeDeleteCoiffeurPopup = () => setIsDeleteCoiffeurPopupOpen(false);
+    
+    const {coiffeurs}=usePage().props as {coiffeurs?:any};
+    console.log("coiffeurs props:",coiffeurs);
     const [isSalonPopupOpen, setIsSalonPopupOpen] = useState(false);
 
     const openSalonPopup = () => setIsSalonPopupOpen(true);
     const closeSalonPopup = () => setIsSalonPopupOpen(false);
 
-
+    // États pour les popups de suppression de salons
+    const [isDeleteSalonPopupOpen, setIsDeleteSalonPopupOpen] = useState(false);
+    const openDeleteSalonPopup = () => setIsDeleteSalonPopupOpen(true);
+    const closeDeleteSalonPopup = () => setIsDeleteSalonPopupOpen(false);
 
     const [isClientPopupOpen, setIsClientPopupOpen] = useState(false);
 
     const openClientPopup = () => setIsClientPopupOpen(true);
     const closeCientPopup = () => setIsClientPopupOpen(false);
 
+    // États pour les popups de suppression de clients
+    const [isDeleteClientPopupOpen, setIsDeleteClientPopupOpen] = useState(false);
+    const openDeleteClientPopup = () => setIsDeleteClientPopupOpen(true);
+    const closeDeleteClientPopup = () => setIsDeleteClientPopupOpen(false);
 
     return (
         <AuthenticatedLayout>
@@ -55,7 +81,7 @@ export default function GestionnaireAdmin() {
                                 <FaUserCircle />
                             </h3>
                             <div className={Classes.titlecontentinfo}>
-                                <span> 20 </span>
+                                <span> {counts?.users || 0} </span>
                                 <samp> Utilisateurs </samp>
                             </div>
                         </div>
@@ -73,7 +99,7 @@ export default function GestionnaireAdmin() {
                                 <IoIosAddCircle /> Ajouter
                             </div>
 
-                            <div className={Classes.button2}>
+                            <div className={Classes.button2} onClick={openDeleteUserPopup}>
                                 {" "}
                                 <MdDeleteForever />
                                 Supprimer{" "}
@@ -87,7 +113,7 @@ export default function GestionnaireAdmin() {
                                 <GiComb />
                             </h3>
                             <div className={Classes.titlecontentinfo}>
-                                <span> 05 </span>
+                                <span> {counts?.coiffeurs || 0} </span>
                                 <samp> Coiffeurs Disponible</samp>
                             </div>
                         </div>
@@ -107,7 +133,7 @@ export default function GestionnaireAdmin() {
                                 <IoIosAddCircle />
                                 Ajouter{" "}
                             </div>
-                            <div className={Classes.button2}>
+                            <div className={Classes.button2} onClick={openDeleteCoiffeurPopup}>
                                 {" "}
                                 <MdDeleteForever />
                                 Supprimer{" "}
@@ -121,7 +147,7 @@ export default function GestionnaireAdmin() {
                                 <FaUsers />
                             </h3>
                             <div className={Classes.titlecontentinfo}>
-                                <span> 02 </span>
+                                <span> {counts?.salons || 0} </span>
                                 <samp> Salons Ouverts</samp>
                             </div>
                         </div>
@@ -135,7 +161,7 @@ export default function GestionnaireAdmin() {
                                 <IoIosAddCircle />
                                 Ajouter{" "}
                             </div>
-                            <div className={Classes.button2}>
+                            <div className={Classes.button2} onClick={openDeleteSalonPopup}>
                                 {" "}
                                 <MdDeleteForever />
                                 Supprimer{" "}
@@ -149,7 +175,7 @@ export default function GestionnaireAdmin() {
                                 <MdPayments />
                             </h3>
                             <div className={Classes.titlecontentinfo}>
-                                <span> 100 </span>
+                                <span> {counts?.clients || 0} </span>
                                 <samp> Clients </samp>
                             </div>
                         </div>
@@ -163,7 +189,7 @@ export default function GestionnaireAdmin() {
                                 <IoIosAddCircle />
                                 Ajouter{" "}
                             </div>
-                            <div className={Classes.button2}>
+                            <div className={Classes.button2} onClick={openDeleteClientPopup}>
                                 {" "}
                                 <MdDeleteForever />
                                 Supprimer{" "}
@@ -196,6 +222,20 @@ export default function GestionnaireAdmin() {
                     title="Ajouter un client"
                     onClose={closeCientPopup}
                 />
+            )}
+
+            {/* Popups de suppression */}
+            {isDeleteUserPopupOpen && (
+                <PopupDeleteUser onClose={closeDeleteUserPopup} />
+            )}
+            {isDeleteCoiffeurPopupOpen && (
+                <PopupDeleteCoiffeur onClose={closeDeleteCoiffeurPopup} />
+            )}
+            {isDeleteSalonPopupOpen && (
+                <PopupDeleteSalon onClose={closeDeleteSalonPopup} />
+            )}
+            {isDeleteClientPopupOpen && (
+                <PopupDeleteClient onClose={closeDeleteClientPopup} />
             )}
         </AuthenticatedLayout>
     );

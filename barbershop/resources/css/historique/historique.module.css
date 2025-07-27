@@ -1,0 +1,159 @@
+.historiqueContainer {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+.statsGrid {
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4;
+}
+
+.statCard {
+    @apply p-4 rounded-lg;
+}
+
+.statCardBlue {
+    @apply bg-blue-50;
+}
+
+.statCardGreen {
+    @apply bg-green-50;
+}
+
+.statCardYellow {
+    @apply bg-yellow-50;
+}
+
+.statCardPurple {
+    @apply bg-purple-50;
+}
+
+.statCardRed {
+    @apply bg-red-50;
+}
+
+.statLabel {
+    @apply text-sm font-medium;
+}
+
+.statValue {
+    @apply text-2xl font-bold;
+}
+
+.filtersSection {
+    @apply bg-white overflow-hidden shadow-sm sm:rounded-lg mb-6;
+}
+
+.filtersHeader {
+    @apply flex items-center justify-between mb-4;
+}
+
+.filtersGrid {
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4;
+}
+
+.filterButton {
+    @apply flex items-center px-3 py-2 rounded-md;
+}
+
+.filterButtonGray {
+    @apply bg-gray-100 text-gray-700 hover:bg-gray-200;
+}
+
+.filterButtonGreen {
+    @apply bg-green-600 text-white hover:bg-green-700;
+}
+
+.tableContainer {
+    @apply bg-white overflow-hidden shadow-sm sm:rounded-lg;
+}
+
+.tableHeader {
+    @apply flex justify-between items-center mb-4;
+}
+
+.table {
+    @apply min-w-full divide-y divide-gray-200;
+}
+
+.tableHead {
+    @apply bg-gray-50;
+}
+
+.tableHeaderCell {
+    @apply px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer hover:bg-gray-100;
+}
+
+.tableHeaderContent {
+    @apply flex items-center;
+}
+
+.tableBody {
+    @apply bg-white divide-y divide-gray-200;
+}
+
+.tableRow {
+    @apply hover:bg-gray-50;
+}
+
+.tableCell {
+    @apply px-6 py-4 whitespace-nowrap text-sm;
+}
+
+.tableCellBold {
+    @apply font-medium text-gray-900;
+}
+
+.tableCellNormal {
+    @apply text-gray-900;
+}
+
+.badge {
+    @apply px-2 py-1 text-xs font-medium rounded-full;
+}
+
+.badgeGreen {
+    @apply bg-green-100 text-green-800;
+}
+
+.badgeBlue {
+    @apply bg-blue-100 text-blue-800;
+}
+
+.badgeYellow {
+    @apply bg-yellow-100 text-yellow-800;
+}
+
+.badgePurple {
+    @apply bg-purple-100 text-purple-800;
+}
+
+.badgeRed {
+    @apply bg-red-100 text-red-800;
+}
+
+.paginationContainer {
+    @apply flex items-center justify-between mt-6;
+}
+
+.paginationInfo {
+    @apply text-sm text-gray-700;
+}
+
+.paginationButtons {
+    @apply flex space-x-2;
+}
+
+.paginationButton {
+    @apply px-3 py-2 border border-gray-300 rounded-md text-sm font-medium text-gray-700 hover:bg-gray-50;
+}
+
+.sortIcon {
+    @apply ml-2;
+}
+
+.sortIconGray {
+    @apply text-gray-400;
+}
+
+.sortIconBlue {
+    @apply text-blue-600;
+} 

@@ -4,19 +4,19 @@
     left: 0;
     width: 100%;
     height: 100%;
-    backdrop-filter: blur(6px);
-    background: rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(8px);
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4));
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 999;
-    animation: fadeIn 0.4s ease-in-out forwards;
+    animation: fadeIn 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
   }
   
   @keyframes fadeIn {
     0% {
       opacity: 0;
-      transform: scale(0.95);
+        transform: scale(0.9);
     }
     100% {
       opacity: 1;
@@ -25,126 +25,436 @@
   }
   
   .popup {
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(20px);
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+    backdrop-filter: blur(25px);
     border: 1px solid rgba(255, 255, 255, 0.2);
-    padding: 30px 25px;
-    border-radius: 20px;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
-    width: 380px;
-    animation: slideUp 0.4s ease-out forwards;
+    padding: 35px 30px;
+    border-radius: 24px;
+    box-shadow: 
+        0 20px 40px rgba(0, 0, 0, 0.3),
+        0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+    width: 420px;
+    max-width: 90vw;
+    animation: slideUp 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
     color: #fff;
-    font-family: 'Segoe UI', sans-serif;
+    font-family: 'Inter', 'Segoe UI', -apple-system, sans-serif;
+    position: relative;
+    overflow: hidden;
+}
+
+.popup::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
   }
   
   @keyframes slideUp {
     0% {
-      transform: translateY(50px);
+        transform: translateY(60px) scale(0.95);
       opacity: 0;
     }
     100% {
-      transform: translateY(0);
+        transform: translateY(0) scale(1);
       opacity: 1;
     }
   }
   
   .popup h2 {
-    margin-bottom: 20px;
+    margin-bottom: 25px;
     text-align: center;
-    font-size: 24px;
+    font-size: 26px;
+    font-weight: 600;
     color: #ffffff;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
-  }
-  
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    letter-spacing: -0.5px;
+    position: relative;
+}
+
+.popup h2::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 2px;
+    background: linear-gradient(90deg, #00aaff, #2ecc71);
+    border-radius: 1px;
+}
+
+.input,
   .popup input,
   .select {
     width: 100%;
-    padding: 12px;
-    margin: 12px 0;
-    border-radius: 10px;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    background-color: rgba(255, 255, 255, 0.1);
+    padding: 16px 18px;
+    margin: 8px 0 16px 0;
+    border-radius: 12px;
+    border: 2px solid rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.08);
     color: #fff;
-    font-size: 16px;
-    transition: all 0.3s ease;
-  }
-  
-  .popup input::placeholder,
-  .select option {
-    color: rgba(255, 255, 255, 0.6);
+    font-size: 15px;
+    font-weight: 500;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-sizing: border-box;
+}
+
+.popup input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+    font-weight: 400;
   }
   
   .popup input:focus,
-  .select:focus {
+.select:focus,
+.input:focus {
     outline: none;
     border-color: #00aaff;
-    box-shadow: 0 0 8px rgba(0, 170, 255, 0.6);
+    background: rgba(255, 255, 255, 0.12);
+    box-shadow: 
+        0 0 0 3px rgba(0, 170, 255, 0.2),
+        0 4px 12px rgba(0, 0, 0, 0.1);
+    transform: translateY(-1px);
+}
+
+.select option {
+    background: #2a2a2a;
+    color: #fff;
+    padding: 8px;
   }
   
   .btns {
     display: flex;
     justify-content: space-between;
-    margin-top: 30px;
-    gap: 10px;
+    margin-top: 35px;
+    gap: 15px;
   }
   
   .validateBtn,
   .cancelBtn {
     flex: 1;
-    padding: 12px;
+    padding: 16px 24px;
     border: none;
-    border-radius: 10px;
-    font-weight: bold;
+    border-radius: 12px;
+    font-weight: 600;
     font-size: 15px;
     cursor: pointer;
-    transition: background 0.3s ease, transform 0.2s ease;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
   }
   
   .validateBtn {
-    background: linear-gradient(135deg, #00c853, #2ecc71);
+    background: linear-gradient(135deg, #00aaff, #2ecc71);
     color: white;
+    box-shadow: 0 4px 15px rgba(0, 170, 255, 0.3);
   }
   
   .cancelBtn {
-    background: linear-gradient(135deg, #ff5252, #e74c3c);
+    background: linear-gradient(135deg, #ff6b6b, #ee5a52);
     color: white;
+    box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
   }
   
   .validateBtn:hover {
-    background: #00b341;
-    transform: scale(1.05);
+    background: linear-gradient(135deg, #0099ff, #27ae60);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 170, 255, 0.4);
   }
   
   .cancelBtn:hover {
-    background: #d32f2f;
-    transform: scale(1.05);
+    background: linear-gradient(135deg, #ff5252, #e74c3c);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(255, 107, 107, 0.4);
+}
+
+.validateBtn:active,
+.cancelBtn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
   }
   
   .error {
     color: #ff6b6b;
-    margin-top: -5px;
-    margin-bottom: 10px;
-    font-size: 14px;
-    text-align: center;
-  }
-  
+    margin: -8px 0 8px 0;
+    font-size: 13px;
+    font-weight: 500;
+    text-align: left;
+    padding-left: 4px;
+    animation: shake 0.5s ease-in-out;
+}
 
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}
 
-  .select {
-    width: 100%;
-    padding: 12px;
-    margin: 12px 0;
+/* Messages de succès et d'erreur */
+.popup .mb-4 {
+    padding: 12px 16px;
     border-radius: 10px;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    background-color: rgba(255, 255, 255, 0.1);
-    color: #fff;
-    font-size: 16px;
-    transition: all 0.3s ease;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 20px;
+    animation: slideDown 0.4s ease-out;
+}
+
+.popup .text-green-400 {
+    background: rgba(46, 204, 113, 0.2);
+    border: 1px solid rgba(46, 204, 113, 0.3);
+    color: #2ecc71;
+}
+
+.popup .text-red-400 {
+    background: rgba(255, 107, 107, 0.2);
+    border: 1px solid rgba(255, 107, 107, 0.3);
+    color: #ff6b6b;
+}
+
+@keyframes slideDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive design */
+@media (max-width: 480px) {
+    .popup {
+        width: 95vw;
+        padding: 25px 20px;
+        margin: 20px;
+    }
+    
+    .popup h2 {
+        font-size: 22px;
+    }
+    
+    .btns {
+        flex-direction: column;
+    }
+    
+    .validateBtn,
+    .cancelBtn {
+        width: 100%;
+    }
   }
   
-  .select:focus {
+/* Styles pour la recherche et liste déroulante */
+.searchContainer {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.searchInput {
+    width: 100%;
+    padding: 16px 18px 16px 50px;
+    border-radius: 12px;
+    border: 2px solid rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.08);
+    color: #fff;
+    font-size: 15px;
+    font-weight: 500;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-sizing: border-box;
+}
+
+.searchInput::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+    font-weight: 400;
+}
+
+.searchInput:focus {
     outline: none;
     border-color: #00aaff;
-    box-shadow: 0 0 8px rgba(0, 170, 255, 0.6);
-  }
+    background: rgba(255, 255, 255, 0.12);
+    box-shadow: 
+        0 0 0 3px rgba(0, 170, 255, 0.2),
+        0 4px 12px rgba(0, 0, 0, 0.1);
+    transform: translateY(-1px);
+}
+
+.searchIcon {
+    position: absolute;
+    left: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgba(255, 255, 255, 0.5);
+    z-index: 1;
+}
+
+.dropdownList {
+    max-height: 240px;
+    overflow-y: auto;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    margin-top: 8px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.dropdownItem {
+    padding: 16px 20px;
+    cursor: pointer;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #fff;
+}
+
+.dropdownItem:last-child {
+    border-bottom: none;
+}
+
+.dropdownItem:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateX(4px);
+}
+
+.dropdownItemText {
+    font-weight: 500;
+    font-size: 15px;
+}
+
+.dropdownItemIcon {
+    color: #ff6b6b;
+    transition: all 0.3s ease;
+}
+
+.dropdownItem:hover .dropdownItemIcon {
+    transform: scale(1.2);
+}
+
+.noResults {
+    padding: 20px;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.6);
+    font-style: italic;
+}
+
+.selectedItem {
+    background: rgba(0, 170, 255, 0.1);
+    border: 2px solid rgba(0, 170, 255, 0.3);
+    border-radius: 12px;
+    padding: 16px;
+    margin: 16px 0;
+    backdrop-filter: blur(10px);
+}
+
+.selectedItemHeader {
+    font-size: 13px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.selectedItemText {
+    font-size: 18px;
+    font-weight: 700;
+    color: #fff;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.confirmationBox {
+    background: rgba(255, 107, 107, 0.1);
+    border: 2px solid rgba(255, 107, 107, 0.3);
+    border-radius: 12px;
+    padding: 20px;
+    margin: 16px 0;
+    backdrop-filter: blur(10px);
+}
+
+.confirmationHeader {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.confirmationIcon {
+    color: #ff6b6b;
+    margin-right: 12px;
+    font-size: 20px;
+}
+
+.confirmationTitle {
+    font-size: 18px;
+    font-weight: 700;
+    color: #fff;
+    margin: 0;
+}
+
+.confirmationText {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Scrollbar personnalisée pour la liste déroulante */
+.dropdownList::-webkit-scrollbar {
+    width: 6px;
+}
+
+.dropdownList::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+}
+
+.dropdownList::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 3px;
+}
+
+.dropdownList::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+/* Animation pour les éléments de la liste */
+@keyframes slideInFromTop {
+    0% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.dropdownItem {
+    animation: slideInFromTop 0.3s ease-out;
+}
+
+/* Responsive pour la recherche */
+@media (max-width: 480px) {
+    .dropdownList {
+        max-height: 200px;
+    }
+    
+    .dropdownItem {
+        padding: 14px 16px;
+    }
+    
+    .selectedItem {
+        padding: 14px;
+    }
+    
+    .confirmationBox {
+        padding: 16px;
+    }
+}
   
