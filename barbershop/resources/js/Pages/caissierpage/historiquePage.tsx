@@ -138,7 +138,7 @@ export default function HistoriquePage({
     }
 
     const applyFilters = () => {
-        const params: any = { ...localFilters, sort_by: sortBy, sort_order: sortOrder }
+        const params = { ...localFilters, sort_by: sortBy, sort_order: sortOrder }
         if (selectedSalonId) {
             params.salon_id = selectedSalonId
         }
