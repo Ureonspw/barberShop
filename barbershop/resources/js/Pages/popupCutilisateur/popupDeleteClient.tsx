@@ -14,11 +14,18 @@ type Client = {
 export default function PopupDeleteClient({ onClose }: { onClose: () => void }) {
     const { clients } = usePage().props as unknown as { clients: Client[] };
 
+    // Transformer les clients pour correspondre à l'interface Item
+    const transformedClients = (clients || []).map(client => ({
+        id: client.id_client,
+        name: client.nom,
+        ...client
+    }));
+
     return (
         <PopupDeleteSearch
             onClose={onClose}
             title="Supprimer un client"
-            items={clients || []}
+            items={transformedClients}
             searchPlaceholder="Rechercher un client..."
             deleteRoute="supprimerclient"
             icon={<FaUsers className="inline mr-2" />}

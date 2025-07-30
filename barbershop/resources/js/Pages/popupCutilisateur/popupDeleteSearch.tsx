@@ -37,7 +37,7 @@ export default function PopupDeleteSearch({
 
     const { data, setData, delete: destroy, processing, errors, reset } = useForm({
         [idField]: '',
-    });
+    } as any);
 
     const { props } = usePage();
     const [successMessage, setSuccessMessage] = useState<string | null>(null);
@@ -67,8 +67,8 @@ export default function PopupDeleteSearch({
 
     const handleItemSelect = (item: Item) => {
         setSelectedItem(item);
-        setData(idField, item[idField]);
-        setSearchTerm(item[displayField]);
+        (setData as any)(idField, item[idField]);
+        setSearchTerm(item[displayField] as string);
     };
 
     const handleDelete: FormEventHandler = (e) => {
