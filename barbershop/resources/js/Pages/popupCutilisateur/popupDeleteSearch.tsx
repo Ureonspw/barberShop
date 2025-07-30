@@ -4,8 +4,6 @@ import { FormEventHandler, useEffect, useState } from 'react';
 import { FaSearch, FaTrash, FaExclamationTriangle, FaCheck, FaTimes } from 'react-icons/fa';
 
 type Item = {
-    id: number;
-    name: string;
     [key: string]: any;
 };
 
@@ -37,7 +35,7 @@ export default function PopupDeleteSearch({
 
     const { data, setData, delete: destroy, processing, errors, reset } = useForm({
         [idField]: '',
-    });
+    } as Record<string, string>);
 
     const { props } = usePage();
     const [successMessage, setSuccessMessage] = useState<string | null>(null);
@@ -67,7 +65,7 @@ export default function PopupDeleteSearch({
 
     const handleItemSelect = (item: Item) => {
         setSelectedItem(item);
-        setData(idField, item[idField]);
+        setData(idField, item[idField] as string);
         setSearchTerm(item[displayField]);
     };
 
