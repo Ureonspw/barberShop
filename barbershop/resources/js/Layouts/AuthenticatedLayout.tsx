@@ -151,7 +151,19 @@ export default function Authenticated({
                             href={route('dashboard')}
                             active={route().current('dashboard')}
                         >
-                            Dashboard
+                            Admin Dashboard
+                        </ResponsiveNavLink>
+                        <ResponsiveNavLink
+                            href={route('gestionnaire')}
+                            active={route().current('gestionnaire')}
+                        >
+                            Gestionnaire Admin
+                        </ResponsiveNavLink>
+                        <ResponsiveNavLink
+                            href={route('historique')}
+                            active={route().current('historique')}
+                        >
+                            Historique
                         </ResponsiveNavLink>
                     </div>
 

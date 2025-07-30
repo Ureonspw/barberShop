@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CaissierController;
+use App\Http\Controllers\CaissierHistoriqueController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ProfileController;
 // use App\Http\Controllers\ClientController;
@@ -56,6 +57,22 @@ Route::get('/historique/export', [HistoriqueController::class, 'export'])
 Route::get('/caissier', [CaissierController::class, 'index'])
     ->middleware(['auth', 'verified', 'role:caissier'])
     ->name('caissier');
+
+Route::get('/caissier/paiement', [CaissierController::class, 'paiement'])
+    ->middleware(['auth', 'verified', 'role:caissier'])
+    ->name('caissier.paiement.page');
+
+Route::post('/caissier/paiement', [CaissierController::class, 'processPaiement'])
+    ->middleware(['auth', 'verified', 'role:caissier'])
+    ->name('caissier.paiement');
+
+Route::get('/caissier/historique', [CaissierHistoriqueController::class, 'index'])
+    ->middleware(['auth', 'verified', 'role:caissier'])
+    ->name('caissier.historique');
+
+Route::get('/caissier/historique/export', [CaissierHistoriqueController::class, 'export'])
+    ->middleware(['auth', 'verified', 'role:caissier'])
+    ->name('caissier.historique.export');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

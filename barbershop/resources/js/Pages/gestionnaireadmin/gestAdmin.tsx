@@ -71,7 +71,7 @@ export default function GestionnaireAdmin() {
             <div className={Classes.containerbox}>
                 <div className={Classes.titlecontainer}>
                     {" "}
-                    Gestionnaire de l'adminnistrateur Kouame
+                    Gestionnaire de l'Administrateur
                 </div>
                 <div className={Classes.Containerboxson}>
                     <div className={Classes.boxcontainer}>
@@ -152,8 +152,8 @@ export default function GestionnaireAdmin() {
                             </div>
                         </div>
                         <div className={Classes.contentbox}>
-                            Ici vous pouvez ajouter ou supprimer des Salon que
-                            vous avez creer
+                            Ici vous pouvez ajouter ou supprimer des salons que
+                            vous avez créés pour gérer vos différents établissements
                         </div>
                         <div className={Classes.popupbtn}>
                             <div className={Classes.button1} onClick={openSalonPopup}>
@@ -180,8 +180,8 @@ export default function GestionnaireAdmin() {
                             </div>
                         </div>
                         <div className={Classes.contentbox}>
-                            Ici vous pouvez ajouter ou supprimer des Salon que
-                            vous avez creer
+                            Ici vous pouvez ajouter ou supprimer des clients pour
+                            gérer votre base de données clients
                         </div>
                         <div className={Classes.popupbtn}>
                             <div className={Classes.button1} onClick={openClientPopup}>

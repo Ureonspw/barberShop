@@ -31,7 +31,19 @@ export default function AuthenticatedCaissier({
                                     href={route('caissier')}
                                     active={route().current('caissier')}
                                 >
-                                    Dashboard caissier
+                                    Tableau de Bord
+                                </NavLink>
+                                <NavLink
+                                    href={route('caissier.paiement.page')}
+                                    active={route().current('caissier.paiement.page')}
+                                >
+                                    Nouveau Paiement
+                                </NavLink>
+                                <NavLink
+                                    href={route('caissier.historique')}
+                                    active={route().current('caissier.historique')}
+                                >
+                                    Historique
                                 </NavLink>
                             </div>
                         </div>
@@ -132,10 +144,22 @@ export default function AuthenticatedCaissier({
                 >
                     <div className="space-y-1 pb-3 pt-2">
                         <ResponsiveNavLink
-                            href={route('dashboard')}
-                            active={route().current('dashboard')}
+                            href={route('caissier')}
+                            active={route().current('caissier')}
                         >
-                            Dashboard
+                            Tableau de Bord
+                        </ResponsiveNavLink>
+                        <ResponsiveNavLink
+                            href={route('caissier.paiement.page')}
+                            active={route().current('caissier.paiement.page')}
+                        >
+                            Nouveau Paiement
+                        </ResponsiveNavLink>
+                        <ResponsiveNavLink
+                            href={route('caissier.historique')}
+                            active={route().current('caissier.historique')}
+                        >
+                            Historique
                         </ResponsiveNavLink>
                     </div>
 

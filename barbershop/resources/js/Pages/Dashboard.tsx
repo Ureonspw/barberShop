@@ -82,13 +82,36 @@ interface ActivityItem {
     color: string;
 }
 
+interface TopCoiffeur {
+    id_coiffeur: number;
+    nom: string;
+    specialite: string;
+    total_clients: number;
+    total_montant: number;
+    salon: {
+        id_salon: number;
+        nom: string;
+    };
+}
+
+interface TopSalon {
+    id_salon: number;
+    nom: string;
+    adresse: string;
+    total_clients: number;
+    total_montant: number;
+    total_coiffeurs_actifs: number;
+}
+
 interface DashboardProps {
     stats: StatData;
     chartData: ChartData;
     recentActivities: ActivityItem[];
+    topCoiffeurs: TopCoiffeur[];
+    topSalons: TopSalon[];
 }
 
-export default function Dashboard({ stats, chartData, recentActivities }: DashboardProps) {
+export default function Dashboard({ stats, chartData, recentActivities, topCoiffeurs, topSalons }: DashboardProps) {
     const [timeFilter, setTimeFilter] = useState<'jour' | 'semaine' | 'mois' | 'annee'>('jour');
 
     // Fonction pour obtenir les données de graphique selon le filtre
@@ -433,6 +456,86 @@ export default function Dashboard({ stats, chartData, recentActivities }: Dashbo
                     </div>
                 </div>
 
+                {/* Tops du jour */}
+                <div className={styles.topsContainer}>
+                    {/* Top Coiffeurs */}
+                    <div className={styles.topSection}>
+                        <h2 className={styles.topTitle}>
+                            <FaCut />
+                            Top Coiffeurs du Jour
+                        </h2>
+                        <div className={styles.topList}>
+                            {topCoiffeurs.length > 0 ? (
+                                topCoiffeurs.map((coiffeur, index) => (
+                                    <div key={coiffeur.id_coiffeur} className={styles.topItem}>
+                                        <div className={styles.topRank}>#{index + 1}</div>
+                                        <div className={styles.topInfo}>
+                                            <h4>{coiffeur.nom}</h4>
+                                            <p>{coiffeur.specialite}</p>
+                                            <small>{coiffeur.salon.nom}</small>
+                                        </div>
+                                        <div className={styles.topStats}>
+                                            <div className={styles.topStat}>
+                                                <span className={styles.topStatValue}>{coiffeur.total_clients}</span>
+                                                <span className={styles.topStatLabel}>clients</span>
+                                            </div>
+                                            <div className={styles.topStat}>
+                                                <span className={styles.topStatValue}>{coiffeur.total_montant} FCFA</span>
+                                                <span className={styles.topStatLabel}>CA</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                ))
+                            ) : (
+                                <div className={styles.emptyState}>
+                                    <FaCut size={32} />
+                                    <p>Aucun coiffeur actif aujourd'hui</p>
+                                </div>
+                            )}
+                        </div>
+                    </div>
+
+                    {/* Top Salons */}
+                    <div className={styles.topSection}>
+                        <h2 className={styles.topTitle}>
+                            <FaStore />
+                            Top Salons du Jour
+                        </h2>
+                        <div className={styles.topList}>
+                            {topSalons.length > 0 ? (
+                                topSalons.map((salon, index) => (
+                                    <div key={salon.id_salon} className={styles.topItem}>
+                                        <div className={styles.topRank}>#{index + 1}</div>
+                                        <div className={styles.topInfo}>
+                                            <h4>{salon.nom}</h4>
+                                            <p>{salon.adresse}</p>
+                                        </div>
+                                        <div className={styles.topStats}>
+                                            <div className={styles.topStat}>
+                                                <span className={styles.topStatValue}>{salon.total_clients}</span>
+                                                <span className={styles.topStatLabel}>clients</span>
+                                            </div>
+                                            <div className={styles.topStat}>
+                                                <span className={styles.topStatValue}>{salon.total_montant} FCFA</span>
+                                                <span className={styles.topStatLabel}>CA</span>
+                                            </div>
+                                            <div className={styles.topStat}>
+                                                <span className={styles.topStatValue}>{salon.total_coiffeurs_actifs}</span>
+                                                <span className={styles.topStatLabel}>coiffeurs</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                ))
+                            ) : (
+                                <div className={styles.emptyState}>
+                                    <FaStore size={32} />
+                                    <p>Aucun salon actif aujourd'hui</p>
+                                </div>
+                            )}
+                        </div>
+                    </div>
+                </div>
+
                 {/* Activités récentes */}
                 <div className={styles.recentActivity}>
                     <h2 className={styles.activityTitle}>Activités Récentes</h2>
@@ -448,7 +551,7 @@ export default function Dashboard({ stats, chartData, recentActivities }: Dashbo
                                         <div className={styles.activityText}>
                                             {activity.text}
                                             {activity.amount && (
-                                                <span className={styles.activityAmount}> +{activity.amount}€</span>
+                                                <span className={styles.activityAmount}> +{activity.amount} FCFA</span>
                                             )}
                                         </div>
                                         <div className={styles.activityTime}>

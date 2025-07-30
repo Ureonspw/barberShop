@@ -56,10 +56,18 @@ class DashboardController extends Controller
         // Activités récentes
         $recentActivities = $this->getRecentActivities();
 
+        // Top coiffeurs du jour
+        $topCoiffeurs = $this->getTopCoiffeursDuJour();
+
+        // Top salons du jour
+        $topSalons = $this->getTopSalonsDuJour();
+
         return Inertia::render('Dashboard', [
             'stats' => $stats,
             'chartData' => $chartData,
-            'recentActivities' => $recentActivities
+            'recentActivities' => $recentActivities,
+            'topCoiffeurs' => $topCoiffeurs,
+            'topSalons' => $topSalons
         ]);
     }
 
@@ -204,7 +212,7 @@ class DashboardController extends Controller
         // Derniers clients avec distinction nouveau/actif
         $recentClients = Client::with(['salon', 'coiffeur'])
             ->orderBy('created_at', 'desc')
-            ->limit(5)
+            ->limit(8)
             ->get();
 
         foreach ($recentClients as $client) {
@@ -214,6 +222,7 @@ class DashboardController extends Controller
                 'type' => 'client',
                 'text' => $isNewClient ? "Nouveau client: {$client->nom}" : "Client fidèle: {$client->nom}",
                 'time' => $client->created_at->diffForHumans(),
+                'timestamp' => $client->created_at->timestamp,
                 'amount' => null,
                 'icon' => $isNewClient ? 'FaUserPlus' : 'FaUsers',
                 'color' => $isNewClient ? '#800000' : '#563737'
@@ -223,7 +232,7 @@ class DashboardController extends Controller
         // Derniers paiements
         $recentPaiements = Paiement::with(['client', 'salon'])
             ->orderBy('created_at', 'desc')
-            ->limit(3)
+            ->limit(5)
             ->get();
 
         foreach ($recentPaiements as $paiement) {
@@ -232,6 +241,7 @@ class DashboardController extends Controller
                 'type' => 'paiement',
                 'text' => "Paiement {$paiement->mode_paiement} - {$paiement->client->nom}",
                 'time' => $paiement->created_at->diffForHumans(),
+                'timestamp' => $paiement->created_at->timestamp,
                 'amount' => $paiement->somme_paiement,
                 'icon' => 'FaCreditCard',
                 'color' => '#C58522'
@@ -240,7 +250,7 @@ class DashboardController extends Controller
 
         // Derniers salons
         $recentSalons = Salon::orderBy('created_at', 'desc')
-            ->limit(2)
+            ->limit(3)
             ->get();
 
         foreach ($recentSalons as $salon) {
@@ -249,6 +259,7 @@ class DashboardController extends Controller
                 'type' => 'salon',
                 'text' => "Nouveau salon: {$salon->nom}",
                 'time' => $salon->created_at->diffForHumans(),
+                'timestamp' => $salon->created_at->timestamp,
                 'amount' => null,
                 'icon' => 'FaBuilding',
                 'color' => '#563737'
@@ -258,7 +269,7 @@ class DashboardController extends Controller
         // Derniers coiffeurs
         $recentCoiffeurs = Coiffeur::with('salon')
             ->orderBy('created_at', 'desc')
-            ->limit(2)
+            ->limit(3)
             ->get();
 
         foreach ($recentCoiffeurs as $coiffeur) {
@@ -267,17 +278,77 @@ class DashboardController extends Controller
                 'type' => 'coiffeur',
                 'text' => "Nouveau coiffeur: {$coiffeur->nom} - {$coiffeur->salon->nom}",
                 'time' => $coiffeur->created_at->diffForHumans(),
+                'timestamp' => $coiffeur->created_at->timestamp,
                 'amount' => null,
                 'icon' => 'FaUserTie',
                 'color' => '#800000'
             ];
         }
 
-        // Trier par date et prendre les 6 plus récents
+        // Trier par timestamp (plus récent en premier) et prendre les 6 plus récents
         usort($activities, function($a, $b) {
-            return strtotime($a['time']) - strtotime($b['time']);
+            return $b['timestamp'] - $a['timestamp'];
         });
 
-        return array_slice($activities, 0, 6);
+        return array_slice($activities, 0, 10);
+    }
+
+    private function getTopCoiffeursDuJour()
+    {
+        $today = Carbon::today();
+        
+        return Coiffeur::select('coiffeurs.*')
+            ->selectRaw('COUNT(DISTINCT clients.id_client) as total_clients')
+            ->selectRaw('SUM(paiements.somme_paiement) as total_montant')
+            ->join('clients', 'coiffeurs.id_coiffeur', '=', 'clients.id_coiffeur')
+            ->join('paiements', 'clients.id_client', '=', 'paiements.id_client')
+            ->whereDate('paiements.created_at', $today)
+            ->groupBy('coiffeurs.id_coiffeur', 'coiffeurs.nom', 'coiffeurs.specialite', 'coiffeurs.disponibilite', 'coiffeurs.id_salon', 'coiffeurs.created_at', 'coiffeurs.updated_at')
+            ->orderBy('total_clients', 'desc')
+            ->orderBy('total_montant', 'desc')
+            ->limit(5)
+            ->get()
+            ->map(function($coiffeur) {
+                return [
+                    'id_coiffeur' => $coiffeur->id_coiffeur,
+                    'nom' => $coiffeur->nom,
+                    'specialite' => $coiffeur->specialite,
+                    'total_clients' => $coiffeur->total_clients,
+                    'total_montant' => $coiffeur->total_montant,
+                    'salon' => [
+                        'id_salon' => $coiffeur->salon->id_salon,
+                        'nom' => $coiffeur->salon->nom
+                    ]
+                ];
+            });
+    }
+
+    private function getTopSalonsDuJour()
+    {
+        $today = Carbon::today();
+        
+        return Salon::select('salons.*')
+            ->selectRaw('COUNT(DISTINCT clients.id_client) as total_clients')
+            ->selectRaw('SUM(paiements.somme_paiement) as total_montant')
+            ->selectRaw('COUNT(DISTINCT coiffeurs.id_coiffeur) as total_coiffeurs_actifs')
+            ->join('clients', 'salons.id_salon', '=', 'clients.id_salon')
+            ->join('paiements', 'clients.id_client', '=', 'paiements.id_client')
+            ->join('coiffeurs', 'salons.id_salon', '=', 'coiffeurs.id_salon')
+            ->whereDate('paiements.created_at', $today)
+            ->groupBy('salons.id_salon', 'salons.nom', 'salons.adresse', 'salons.id_admin', 'salons.created_at', 'salons.updated_at')
+            ->orderBy('total_montant', 'desc')
+            ->orderBy('total_clients', 'desc')
+            ->limit(5)
+            ->get()
+            ->map(function($salon) {
+                return [
+                    'id_salon' => $salon->id_salon,
+                    'nom' => $salon->nom,
+                    'adresse' => $salon->adresse,
+                    'total_clients' => $salon->total_clients,
+                    'total_montant' => $salon->total_montant,
+                    'total_coiffeurs_actifs' => $salon->total_coiffeurs_actifs
+                ];
+            });
     }
 } 

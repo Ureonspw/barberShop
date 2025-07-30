@@ -8,169 +8,284 @@
     padding: 40px 20px;
     font-family: "Segoe UI", sans-serif;
     background: linear-gradient(to bottom right, #fff4e6, #fff8f1);
-  }
-  
-  .titlecontainer {
+}
+
+.titlecontainer {
     text-align: center;
     font-weight: bold;
     font-size: 2em;
     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  .Containerboxson {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.Containerboxson {
     width: 100%;
     max-width: 1200px;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 25px;
-    padding: 20px;
-  }
-  
-  .boxcontainer {
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.boxcontainer {
     background: #ffffff;
     border-radius: 16px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-    overflow: hidden;
+    padding: 1.5rem;
     display: flex;
     flex-direction: column;
+    gap: 15px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     min-height: 400px;
-  }
-  
-  .boxcontainer:hover {
+}
+
+.boxcontainer:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-  }
-  
-  .boxcontainerimgtitle {
-    background-color: #ffaa2a;
-    padding: 1em;
+}
+
+.boxcontainerimgtitle {
     display: flex;
-    align-items: center;
     justify-content: space-between;
-  }
-  
-  .boxcontainerimgtitle h3 {
-    background-color: #fff;
-    color: #ffaa2a;
-    padding: 10px;
-    border-radius: 10px;
-    font-size: 1.5em;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    aspect-ratio: 1;
+    align-items: center;
+}
+
+.boxcontainerimgtitle h3 {
+    background: #ffaa2a;
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
-  }
-  
-  .titlecontentinfo {
-    font-size: 1em;
-    color: #fff;
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.boxcontainer:hover .boxcontainerimgtitle h3 {
+    transform: rotate(5deg) scale(1.05);
+    box-shadow: 0 8px 25px rgba(255, 170, 42, 0.3);
+}
+
+.titlecontentinfo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.25rem;
+}
+
+.titlecontentinfo span {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.titlecontentinfo samp {
+    font-size: 0.875rem;
+    color: #28a745;
+    font-weight: 600;
     display: flex;
     align-items: center;
-    gap: 0.5em;
-    font-weight: 500;
-  }
-  
-  .contentbox {
+    gap: 0.25rem;
+}
+
+.contentbox {
     flex-grow: 1;
-    padding: 1.5em;
-    background-color: #ffffff;
     color: #333;
-    font-size: 0.95em;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    line-height: 1.5;
-  }
-  
-  .popupbtn {
-    width: 100%;
+    line-height: 1.6;
+    padding: 1rem 0;
+}
+
+.popupbtn {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 15px;
-    background-color: #fff7ec;
-    padding: 1em;
-    border-top: 1px solid #ffe0b2;
     flex-wrap: wrap;
-  }
-  
-  .button1,
-  .button2 {
-    flex: 1 1 140px;
-    max-width: 160px;
-    min-width: 130px;
-    height: 45px;
-    background-color: #ffaa2a;
-    color: #fff;
-    border: none;
-    border-radius: 30px;
-    font-size: 0.95em;
+    margin-top: auto;
+}
+
+.button1,
+.button2 {
+    flex: 1;
+    padding: 0.75rem 1.5rem;
+    background: transparent;
+    color: #555;
+    border: 2px solid #e1e5e9;
+    border-radius: 8px;
     font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: "Segoe UI", sans-serif;
+    font-size: 0.9rem;
     display: flex;
     align-items: center;
-    justify-content: center;
     gap: 8px;
-    cursor: pointer;
-    transition: background 0.3s ease, transform 0.2s ease;
-    box-shadow: 0 4px 8px rgba(255, 170, 42, 0.3);
-    text-align: center;
-  }
-  
-  .button2 {
-    background-color: #810000;
-  }
-  
-  .button1:hover {
-    background-color: #e6911f;
-    transform: scale(1.05);
-  }
-  
-  .button2:hover {
-    background-color: #5f0000;
-    transform: scale(1.05);
-  }
-  
-  .popupbtn svg {
-    font-size: 1.2em;
+    min-width: 120px;
+    justify-content: center;
+}
+
+.button1:hover {
+    background: #ffaa2a;
+    color: white;
+    border-color: #ffaa2a;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(255, 170, 42, 0.3);
+}
+
+.button2:hover {
+    background: #dc3545;
+    color: white;
+    border-color: #dc3545;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(220, 53, 69, 0.3);
+}
+
+.button1.active,
+.button2.active {
+    background: #ffaa2a;
+    color: white;
+    border-color: #ffaa2a;
+    box-shadow: 0 4px 15px rgba(255, 170, 42, 0.3);
+}
+
+.popupbtn svg {
+    font-size: 1.1em;
     vertical-align: middle;
-  }
-  
-  /* ✅ RESPONSIVE ADAPTATION */
-  @media (max-width: 600px) {
-    .popupbtn {
-      flex-direction: column;
-      gap: 10px;
-      height: 4em;
-      width: 100%;
-      padding: 0.8em;
+    transition: transform 0.3s ease;
+}
+
+.button1:hover svg,
+.button2:hover svg {
+    transform: scale(1.1);
+}
+
+/* ✅ RESPONSIVE ADAPTATION */
+@media (max-width: 1200px) {
+    .Containerboxson {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 20px;
     }
-  
+}
+
+@media (max-width: 768px) {
+    .containerbox {
+        padding: 20px 15px;
+    }
+    
+    .titlecontainer {
+        font-size: 1.6em;
+    }
+    
+    .Containerboxson {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 10px;
+    }
+    
+    .boxcontainer {
+        min-height: 350px;
+    }
+    
+    .titlecontentinfo span {
+        font-size: 2rem;
+    }
+    
+    .contentbox {
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 600px) {
+    .popupbtn {
+        flex-direction: column;
+        gap: 12px;
+    }
+
     .button1,
     .button2 {
-      width: 40%;
-      height: 38px;
-      font-size: 0.85em;
-      padding: 8px 12px;
-      border-radius: 20px;
-      gap: 6px;
+        width: 100%;
+        font-size: 0.85em;
+        padding: 0.75rem 1rem;
     }
-  
+
     .popupbtn svg {
-      font-size: 1em;
+        font-size: 1em;
     }
-  
+
     .titlecontentinfo {
-      font-size: 0.9em;
-      flex-direction: column;
-      text-align: center;
+        text-align: center;
     }
-  
+    
+    .titlecontentinfo span {
+        font-size: 1.8rem;
+    }
+
     .boxcontainer {
-      min-height: 360px;
+        min-height: 320px;
     }
-  }
+    
+    .boxcontainerimgtitle {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+    
+    .boxcontainerimgtitle h3 {
+        font-size: 1.3rem;
+        width: 45px;
+        height: 45px;
+    }
+}
+
+@media (max-width: 480px) {
+    .containerbox {
+        padding: 15px 10px;
+    }
+    
+    .titlecontainer {
+        font-size: 1.4em;
+        margin-bottom: 15px;
+    }
+    
+    .Containerboxson {
+        gap: 15px;
+        padding: 5px;
+    }
+    
+    .boxcontainer {
+        min-height: 300px;
+        padding: 1rem;
+    }
+    
+    .titlecontentinfo span {
+        font-size: 1.6rem;
+    }
+    
+    .contentbox {
+        font-size: 0.85em;
+        padding: 0.75rem 0;
+    }
+    
+    .popupbtn {
+        gap: 10px;
+    }
+    
+    .button1,
+    .button2 {
+        height: 40px;
+        font-size: 0.8em;
+    }
+}
   

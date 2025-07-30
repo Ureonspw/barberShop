@@ -1,0 +1,929 @@
+.caissierPage {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 40px 20px;
+    font-family: "Segoe UI", sans-serif;
+    background: linear-gradient(to bottom right, #fff4e6, #fff8f1);
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.headerTop {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 20px;
+}
+
+.backButton {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #ffaa2a;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.backButton:hover {
+    color: #e6951f;
+    transform: translateX(-5px);
+}
+
+.header h1 {
+    font-weight: bold;
+    font-size: 2em;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.header p {
+    font-size: 1.1em;
+    color: #666;
+    margin: 0;
+}
+
+/* Filtre par salon */
+.filterSection {
+    margin-bottom: 20px;
+}
+
+.filterCard {
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    padding: 1.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.filterCard:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.filterHeader {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 1rem;
+    color: #333;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.filterContent {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.filterSelect {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 2px solid #e1e5e9;
+    border-radius: 10px;
+    font-size: 1rem;
+    background: #f8f9fa;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: "Segoe UI", sans-serif;
+}
+
+.filterSelect:focus {
+    outline: none;
+    border-color: #ffaa2a;
+    background: white;
+    box-shadow: 0 0 0 3px rgba(255, 170, 42, 0.1);
+}
+
+.filterInfo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #666;
+    font-size: 0.9rem;
+    padding: 0.5rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.filterInfo strong {
+    color: #ffaa2a;
+}
+
+/* Filtres avancés pour l'historique */
+.filtersGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.filterGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.filterGroup label {
+    font-weight: 500;
+    color: #555;
+    font-size: 0.9rem;
+}
+
+.filterInput {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 2px solid #e1e5e9;
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background: #f8f9fa;
+    font-family: "Segoe UI", sans-serif;
+}
+
+.filterInput:focus {
+    outline: none;
+    border-color: #ffaa2a;
+    background: white;
+    box-shadow: 0 0 0 3px rgba(255, 170, 42, 0.1);
+}
+
+.filterActions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.applyButton {
+    background: #ffaa2a;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.applyButton:hover {
+    background: #e6951f;
+    transform: translateY(-2px);
+}
+
+.clearButton {
+    background: #6c757d;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.clearButton:hover {
+    background: #5a6268;
+    transform: translateY(-2px);
+}
+
+.exportButton {
+    background: #28a745;
+    color: white;
+    text-decoration: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.exportButton:hover {
+    background: #218838;
+    transform: translateY(-2px);
+}
+
+.statsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.statCard {
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.statCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.statIcon {
+    background: #ffaa2a;
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+}
+
+.statContent {
+    flex: 1;
+}
+
+.statValue {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.statLabel {
+    color: #666;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.fonctionnalitesSection {
+    margin-bottom: 30px;
+}
+
+.sectionTitle {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: #333;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.fonctionnalitesGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.fonctionnaliteCard {
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    color: inherit;
+    position: relative;
+    overflow: hidden;
+}
+
+.fonctionnaliteCard::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: var(--couleur);
+}
+
+.fonctionnaliteCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.fonctionnaliteIcon {
+    background: var(--couleur);
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+}
+
+.fonctionnaliteContent {
+    flex: 1;
+}
+
+.fonctionnaliteContent h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.fonctionnaliteContent p {
+    color: #666;
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.fonctionnaliteArrow {
+    color: var(--couleur);
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+}
+
+.fonctionnaliteCard:hover .fonctionnaliteArrow {
+    transform: translateX(5px);
+}
+
+.content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    margin-bottom: 20px;
+}
+
+.paiementForm {
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 1.5em;
+}
+
+.paiementForm:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.formTitle {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: #333;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.formGroup {
+    margin-bottom: 1.5rem;
+}
+
+.formLabel {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: #555;
+    font-size: 0.95em;
+}
+
+.formInput {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 2px solid #e1e5e9;
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background: #f8f9fa;
+    font-family: "Segoe UI", sans-serif;
+}
+
+.formInput:focus {
+    outline: none;
+    border-color: #ffaa2a;
+    background: white;
+    box-shadow: 0 0 0 3px rgba(255, 170, 42, 0.1);
+}
+
+.formSelect {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 2px solid #e1e5e9;
+    border-radius: 10px;
+    font-size: 1rem;
+    background: #f8f9fa;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: "Segoe UI", sans-serif;
+}
+
+.formSelect:focus {
+    outline: none;
+    border-color: #ffaa2a;
+    background: white;
+    box-shadow: 0 0 0 3px rgba(255, 170, 42, 0.1);
+}
+
+.submitButton {
+    width: 100%;
+    padding: 1rem;
+    background: #ffaa2a;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+    font-family: "Segoe UI", sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.submitButton:hover {
+    background: #e6951f;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(255, 170, 42, 0.3);
+}
+
+.submitButton:active {
+    transform: translateY(0);
+}
+
+.submitButton:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.historiqueSection {
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 1.5em;
+}
+
+.historiqueSection:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.historiqueTitle {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: #333;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.paiementCard {
+    background: #f8f9fa;
+    border-radius: 15px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-left: 4px solid #ffaa2a;
+    transition: all 0.3s ease;
+}
+
+.paiementCard:hover {
+    transform: translateX(5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.paiementHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.clientName {
+    font-weight: 600;
+    color: #333;
+    font-size: 1.1rem;
+}
+
+.montant {
+    font-weight: 700;
+    color: #ffaa2a;
+    font-size: 1.2rem;
+}
+
+.paiementDetails {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.modePaiement {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.modePaiement.especes {
+    background: #d4edda;
+    color: #155724;
+}
+
+.modePaiement.carte {
+    background: #d1ecf1;
+    color: #0c5460;
+}
+
+.modePaiement.cheque {
+    background: #fff3cd;
+    color: #856404;
+}
+
+.emptyState {
+    text-align: center;
+    padding: 2rem;
+    color: #666;
+}
+
+.emptyState svg {
+    width: 64px;
+    height: 64px;
+    margin: 0 auto 1rem;
+    opacity: 0.5;
+    color: #ffaa2a;
+}
+
+.successMessage {
+    background: #d4edda;
+    color: #155724;
+    padding: 1rem;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    border-left: 4px solid #28a745;
+}
+
+.errorMessage {
+    background: #f8d7da;
+    color: #721c24;
+    padding: 1rem;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    border-left: 4px solid #dc3545;
+}
+
+.clientSearchResults {
+    margin-top: 0.5rem;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.clientSearchItem {
+    padding: 0.5rem;
+    background: #f8f9fa;
+    border-radius: 5px;
+    margin-bottom: 0.25rem;
+    cursor: pointer;
+    border: 1px solid #e1e5e9;
+    transition: all 0.2s ease;
+}
+
+.clientSearchItem:hover {
+    background: #ffaa2a;
+    color: white;
+}
+
+/* Tableau d'historique */
+.tableContainer {
+    overflow-x: auto;
+    margin-bottom: 2rem;
+}
+
+.historiqueTable {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.historiqueTable th {
+    background: #f8f9fa;
+    padding: 1rem;
+    text-align: left;
+    font-weight: 600;
+    color: #333;
+    border-bottom: 2px solid #e1e5e9;
+}
+
+.historiqueTable td {
+    padding: 1rem;
+    border-bottom: 1px solid #e1e5e9;
+    vertical-align: top;
+}
+
+.historiqueTable tr:hover {
+    background: #f8f9fa;
+}
+
+.sortableHeader {
+    cursor: pointer;
+    user-select: none;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.sortableHeader:hover {
+    color: #ffaa2a;
+}
+
+.clientInfo, .coiffeurInfo, .salonInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.clientInfo > div, .coiffeurInfo > div, .salonInfo > div {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.clientInfo small, .coiffeurInfo small, .salonInfo small {
+    color: #666;
+    font-size: 0.8rem;
+}
+
+.montantCell {
+    font-weight: 700;
+    color: #ffaa2a;
+    font-size: 1.1rem;
+}
+
+.statutPaiement {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.statutPaiement.paye {
+    background: #d4edda;
+    color: #155724;
+}
+
+.statutPaiement.en_attente {
+    background: #fff3cd;
+    color: #856404;
+}
+
+.statutPaiement.annule {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 2rem;
+}
+
+.paginationLink {
+    padding: 0.5rem 1rem;
+    border: 1px solid #e1e5e9;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #666;
+    transition: all 0.3s ease;
+}
+
+.paginationLink:hover {
+    background: #ffaa2a;
+    color: white;
+    border-color: #ffaa2a;
+}
+
+.activePage {
+    background: #ffaa2a;
+    color: white;
+    border-color: #ffaa2a;
+}
+
+/* Top coiffeurs styles */
+.topCoiffeursList {
+    margin-bottom: 2rem;
+}
+
+.topCoiffeurCard {
+    background: #f8f9fa;
+    border-radius: 12px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    transition: all 0.3s ease;
+}
+
+.topCoiffeurCard:hover {
+    transform: translateX(5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.topCoiffeurRank {
+    background: #ffaa2a;
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.topCoiffeurInfo {
+    flex: 1;
+}
+
+.topCoiffeurInfo h4 {
+    margin: 0 0 5px 0;
+    color: #333;
+    font-weight: 600;
+}
+
+.topCoiffeurInfo p {
+    margin: 0;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.topCoiffeurStats {
+    text-align: right;
+}
+
+.topCoiffeurClients {
+    background: #28a745;
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+/* Salons styles */
+.salonsSection {
+    margin-top: 2rem;
+}
+
+.salonsTitle {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #333;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.salonsList {
+    display: grid;
+    gap: 1rem;
+}
+
+.salonCard {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 1rem;
+    border-left: 3px solid #17a2b8;
+    transition: all 0.3s ease;
+}
+
+.salonCard:hover {
+    transform: translateX(3px);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.salonCard h4 {
+    margin: 0 0 5px 0;
+    color: #333;
+    font-weight: 600;
+}
+
+.salonCard p {
+    margin: 0 0 8px 0;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.salonCoiffeurs {
+    background: #17a2b8;
+    color: white;
+    padding: 0.2rem 0.6rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+@media (max-width: 768px) {
+    .caissierPage {
+        padding: 20px 10px;
+    }
+    
+    .content {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .statsGrid {
+        grid-template-columns: 1fr;
+    }
+    
+    .fonctionnalitesGrid {
+        grid-template-columns: 1fr;
+    }
+    
+    .filtersGrid {
+        grid-template-columns: 1fr;
+    }
+    
+    .filterActions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .header h1 {
+        font-size: 1.5rem;
+    }
+    
+    .paiementDetails {
+        grid-template-columns: 1fr;
+    }
+    
+    .paiementForm,
+    .historiqueSection {
+        padding: 1rem;
+    }
+    
+    .filterContent {
+        flex-direction: column;
+    }
+    
+    .historiqueTable {
+        font-size: 0.9rem;
+    }
+    
+    .historiqueTable th,
+    .historiqueTable td {
+        padding: 0.5rem;
+    }
+}
