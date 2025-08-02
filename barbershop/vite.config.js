@@ -8,6 +8,7 @@ export default defineConfig({
             input: 'resources/js/app.tsx',
             refresh: true,
             https: true,
+            Base: '/',
         }),
         react(),
     ],
