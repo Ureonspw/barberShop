@@ -342,6 +342,7 @@
     animation: fadeInUp 0.5s ease forwards;
 }
 
+
 .scrollToTop:hover {
     transform: translateY(-5px) scale(1.1);
     box-shadow: 0 10px 25px rgba(197, 133, 34, 0.4);

@@ -12,7 +12,6 @@ import { GiStraightPipe } from "react-icons/gi";
 import { GiHarp } from "react-icons/gi";
 import { GiBottleVapors } from "react-icons/gi";
 
-
 export default function Contenuepg() {
     return (
         <>
@@ -66,31 +65,31 @@ export default function Contenuepg() {
                 </div>
             </div>
 
-           
-
             <div id="contact" className={Classes.contactsbox}>
                 <div className={Classes.boxtransition}></div>
                 <h1>Contactez-nous</h1>
                 <div className={Classes.contactsboxcontainer}>
-                <div className={Classes.lieuxboxnum}>
-                            <div className={Classes.lieuposnum}>
+                    <div className={Classes.lieuxboxnum}>
+                        <div className={Classes.lieuposnum}>
                             <IoCallOutline />
-                            </div>
-                            <samp>+225 07 13 04 11 12</samp>
-                            <h3>Barber_225 number</h3>
                         </div>
+                        <samp>+225 07 13 04 11 12</samp>
+                        <h3>Barber_225 number</h3>
+                    </div>
 
-                        <div className={Classes.titlecontactsresaux1}>
-                            <FaTiktok />
-                        </div>
-                        <div className={Classes.titlecontactsresaux2}>
-                            <FaInstagram />
-                        </div>
-                        <div className={Classes.titlecontactsresaux3}>
-                            <FaFacebook />
-                        </div>
-                        <div className={Classes.titlecontactsresaux4}>Suivez nous sur les reseaux sociaux <FaLongArrowAltRight /></div>
-
+                    <div className={Classes.titlecontactsresaux1}>
+                        <FaTiktok />
+                    </div>
+                    <div className={Classes.titlecontactsresaux2}>
+                        <FaInstagram />
+                    </div>
+                    <div className={Classes.titlecontactsresaux3}>
+                        <FaFacebook />
+                    </div>
+                    <div className={Classes.titlecontactsresaux4}>
+                        Suivez nous sur les reseaux sociaux{" "}
+                        <FaLongArrowAltRight />
+                    </div>
                 </div>
             </div>
             <div id="services" className={Classes.servicescontainer}>
@@ -98,7 +97,8 @@ export default function Contenuepg() {
                     <h1>Nos Services</h1>
                     <div>
                         <p>
-                            Découvrez notre gamme complète de services de coiffure professionnelle
+                            Découvrez notre gamme complète de services de
+                            coiffure professionnelle
                         </p>
                     </div>
                     <div className={Classes.servicesgrid}>

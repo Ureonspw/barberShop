@@ -111,3 +111,24 @@
         filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.4));
     }
 }
+
+
+
+
+@media (max-width: 480px) {
+    .title{
+        display: flex;
+        align-content: center;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        height: 40%;
+        width: 80%;
+        font-size: 1rem;
+        margin-bottom: 4em;
+        font-weight: 600;
+    }
+    .title svg{
+        display: none;
+    }
+}

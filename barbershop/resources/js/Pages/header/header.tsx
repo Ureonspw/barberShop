@@ -1,4 +1,5 @@
 import Classes from "../../../css/header/header.module.css";
+import { IoMdLogIn } from "react-icons/io";
 
 export default function Header() {
     return (
@@ -14,6 +15,8 @@ export default function Header() {
                 <a href="/login" className={Classes.navLink}>Connexion</a>
                 <a href="/register" className={Classes.navLink}>Inscription</a>
             </div>
+            <a href="/login" className={Classes.navLink2}><IoMdLogIn /></a>
+
         </header>
-    );
+    ); 
 }
