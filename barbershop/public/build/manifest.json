@@ -1,0 +1,658 @@
+{
+  "_AuthenticatedLayout-B9DB669g.js": {
+    "file": "assets/AuthenticatedLayout-B9DB669g.js",
+    "name": "AuthenticatedLayout",
+    "imports": [
+      "resources/js/app.tsx",
+      "_ResponsiveNavLink-BWydkspo.js"
+    ]
+  },
+  "_AuthenticatedLayoutcaissier-BSRHoaBr.css": {
+    "file": "assets/AuthenticatedLayoutcaissier-BSRHoaBr.css",
+    "src": "_AuthenticatedLayoutcaissier-BSRHoaBr.css"
+  },
+  "_AuthenticatedLayoutcaissier-Da-n7tXx.js": {
+    "file": "assets/AuthenticatedLayoutcaissier-Da-n7tXx.js",
+    "name": "AuthenticatedLayoutcaissier",
+    "imports": [
+      "resources/js/app.tsx",
+      "_ResponsiveNavLink-BWydkspo.js"
+    ],
+    "css": [
+      "assets/AuthenticatedLayoutcaissier-BSRHoaBr.css"
+    ]
+  },
+  "_GuestLayout-BkRxwPrw.js": {
+    "file": "assets/GuestLayout-BkRxwPrw.js",
+    "name": "GuestLayout",
+    "imports": [
+      "resources/js/app.tsx",
+      "_barberlogo-CCddF666.js"
+    ]
+  },
+  "_InputLabel-BKf6ruEm.js": {
+    "file": "assets/InputLabel-BKf6ruEm.js",
+    "name": "InputLabel",
+    "imports": [
+      "resources/js/app.tsx"
+    ]
+  },
+  "_PrimaryButton-BcIaaWaV.js": {
+    "file": "assets/PrimaryButton-BcIaaWaV.js",
+    "name": "PrimaryButton",
+    "imports": [
+      "resources/js/app.tsx"
+    ]
+  },
+  "_ResponsiveNavLink-BWydkspo.js": {
+    "file": "assets/ResponsiveNavLink-BWydkspo.js",
+    "name": "ResponsiveNavLink",
+    "imports": [
+      "resources/js/app.tsx",
+      "_barberlogo-CCddF666.js",
+      "_transition-DKRl218_.js"
+    ]
+  },
+  "_TextInput-Kkq3SxrG.js": {
+    "file": "assets/TextInput-Kkq3SxrG.js",
+    "name": "TextInput",
+    "imports": [
+      "resources/js/app.tsx"
+    ]
+  },
+  "_barberlogo-CCddF666.js": {
+    "file": "assets/barberlogo-CCddF666.js",
+    "name": "barberlogo",
+    "assets": [
+      "assets/barberlogo-Bc99PHkB.png"
+    ]
+  },
+  "_iconBase-wn5QK0Z3.js": {
+    "file": "assets/iconBase-wn5QK0Z3.js",
+    "name": "iconBase",
+    "imports": [
+      "resources/js/app.tsx"
+    ]
+  },
+  "_index-BOuRXsCu.js": {
+    "file": "assets/index-BOuRXsCu.js",
+    "name": "index",
+    "imports": [
+      "_iconBase-wn5QK0Z3.js"
+    ]
+  },
+  "_index-Dc8vIfrn.js": {
+    "file": "assets/index-Dc8vIfrn.js",
+    "name": "index",
+    "imports": [
+      "_iconBase-wn5QK0Z3.js"
+    ]
+  },
+  "_index-DfHXDm4O.js": {
+    "file": "assets/index-DfHXDm4O.js",
+    "name": "index",
+    "imports": [
+      "_iconBase-wn5QK0Z3.js"
+    ]
+  },
+  "_index-kRwWHyEk.js": {
+    "file": "assets/index-kRwWHyEk.js",
+    "name": "index",
+    "imports": [
+      "_iconBase-wn5QK0Z3.js"
+    ]
+  },
+  "_index-xo0AcSJE.js": {
+    "file": "assets/index-xo0AcSJE.js",
+    "name": "index",
+    "imports": [
+      "_iconBase-wn5QK0Z3.js"
+    ]
+  },
+  "_popupuser-CY4CdXUF.css": {
+    "file": "assets/popupuser-CY4CdXUF.css",
+    "src": "_popupuser-CY4CdXUF.css"
+  },
+  "_popupuser.module-Ck2_fLBJ.js": {
+    "file": "assets/popupuser.module-Ck2_fLBJ.js",
+    "name": "popupuser.module",
+    "css": [
+      "assets/popupuser-CY4CdXUF.css"
+    ]
+  },
+  "_transition-DKRl218_.js": {
+    "file": "assets/transition-DKRl218_.js",
+    "name": "transition",
+    "imports": [
+      "resources/js/app.tsx"
+    ]
+  },
+  "public/images/5985dcd399d894000123ef02_bg-tigolos.jpg.jpeg": {
+    "file": "assets/5985dcd399d894000123ef02_bg-tigolos.jpg-DqZwNA2N.jpeg",
+    "src": "public/images/5985dcd399d894000123ef02_bg-tigolos.jpg.jpeg"
+  },
+  "public/images/5985dcd39abf440001d1ff06_bg-text-branca.jpg.jpeg": {
+    "file": "assets/5985dcd39abf440001d1ff06_bg-text-branca.jpg-Ck5unAVx.jpeg",
+    "src": "public/images/5985dcd39abf440001d1ff06_bg-text-branca.jpg.jpeg"
+  },
+  "public/images/5985dcd8399f94000113ebf4_img-bg-header-home.jpg.jpeg": {
+    "file": "assets/5985dcd8399f94000113ebf4_img-bg-header-home.jpg-DQrBrGnM.jpeg",
+    "src": "public/images/5985dcd8399f94000113ebf4_img-bg-header-home.jpg.jpeg"
+  },
+  "public/images/59863aff1c3cee0001f83906_mascara-tijolos-bottom.jpg.jpeg": {
+    "file": "assets/59863aff1c3cee0001f83906_mascara-tijolos-bottom.jpg-BT5X1-bA.jpeg",
+    "src": "public/images/59863aff1c3cee0001f83906_mascara-tijolos-bottom.jpg.jpeg"
+  },
+  "public/images/59c48c1cb7ea86000189d6ae_cadeira-slide-intro.jpg.jpeg": {
+    "file": "assets/59c48c1cb7ea86000189d6ae_cadeira-slide-intro.jpg-CfPKHcPS.jpeg",
+    "src": "public/images/59c48c1cb7ea86000189d6ae_cadeira-slide-intro.jpg.jpeg"
+  },
+  "public/images/59dcd192a377e500011be184_mascara-tijolos-header-1800px.png": {
+    "file": "assets/59dcd192a377e500011be184_mascara-tijolos-header-1800px-lSU4xePR.png",
+    "src": "public/images/59dcd192a377e500011be184_mascara-tijolos-header-1800px.png"
+  },
+  "public/images/barberlogo.png": {
+    "file": "assets/barberlogo-Bc99PHkB.png",
+    "src": "public/images/barberlogo.png"
+  },
+  "resources/js/Pages/Auth/ConfirmPassword.tsx": {
+    "file": "assets/ConfirmPassword-CV69_BbY.js",
+    "name": "ConfirmPassword",
+    "src": "resources/js/Pages/Auth/ConfirmPassword.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_TextInput-Kkq3SxrG.js",
+      "_InputLabel-BKf6ruEm.js",
+      "_PrimaryButton-BcIaaWaV.js",
+      "_GuestLayout-BkRxwPrw.js",
+      "_barberlogo-CCddF666.js"
+    ]
+  },
+  "resources/js/Pages/Auth/ForgotPassword.tsx": {
+    "file": "assets/ForgotPassword-DvUethF8.js",
+    "name": "ForgotPassword",
+    "src": "resources/js/Pages/Auth/ForgotPassword.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_TextInput-Kkq3SxrG.js",
+      "_PrimaryButton-BcIaaWaV.js",
+      "_GuestLayout-BkRxwPrw.js",
+      "_barberlogo-CCddF666.js"
+    ]
+  },
+  "resources/js/Pages/Auth/Login.tsx": {
+    "file": "assets/Login-DOp_ARTR.js",
+    "name": "Login",
+    "src": "resources/js/Pages/Auth/Login.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_TextInput-Kkq3SxrG.js",
+      "_InputLabel-BKf6ruEm.js",
+      "_PrimaryButton-BcIaaWaV.js",
+      "_GuestLayout-BkRxwPrw.js",
+      "_barberlogo-CCddF666.js"
+    ]
+  },
+  "resources/js/Pages/Auth/Register.tsx": {
+    "file": "assets/Register-rTYUIftt.js",
+    "name": "Register",
+    "src": "resources/js/Pages/Auth/Register.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_TextInput-Kkq3SxrG.js",
+      "_InputLabel-BKf6ruEm.js",
+      "_PrimaryButton-BcIaaWaV.js",
+      "_GuestLayout-BkRxwPrw.js",
+      "_barberlogo-CCddF666.js"
+    ]
+  },
+  "resources/js/Pages/Auth/ResetPassword.tsx": {
+    "file": "assets/ResetPassword-VshwDcaQ.js",
+    "name": "ResetPassword",
+    "src": "resources/js/Pages/Auth/ResetPassword.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_TextInput-Kkq3SxrG.js",
+      "_InputLabel-BKf6ruEm.js",
+      "_PrimaryButton-BcIaaWaV.js",
+      "_GuestLayout-BkRxwPrw.js",
+      "_barberlogo-CCddF666.js"
+    ]
+  },
+  "resources/js/Pages/Auth/VerifyEmail.tsx": {
+    "file": "assets/VerifyEmail-Cy8OTFbE.js",
+    "name": "VerifyEmail",
+    "src": "resources/js/Pages/Auth/VerifyEmail.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_PrimaryButton-BcIaaWaV.js",
+      "_GuestLayout-BkRxwPrw.js",
+      "_barberlogo-CCddF666.js"
+    ]
+  },
+  "resources/js/Pages/Dashboard.tsx": {
+    "file": "assets/Dashboard-Be-ZaLvv.js",
+    "name": "Dashboard",
+    "src": "resources/js/Pages/Dashboard.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_AuthenticatedLayout-B9DB669g.js",
+      "_index-kRwWHyEk.js",
+      "_ResponsiveNavLink-BWydkspo.js",
+      "_barberlogo-CCddF666.js",
+      "_transition-DKRl218_.js",
+      "_iconBase-wn5QK0Z3.js"
+    ],
+    "css": [
+      "assets/Dashboard-A7OXKZzV.css"
+    ]
+  },
+  "resources/js/Pages/Historique/Index.tsx": {
+    "file": "assets/Index-7UpOOMjG.js",
+    "name": "Index",
+    "src": "resources/js/Pages/Historique/Index.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_AuthenticatedLayout-B9DB669g.js",
+      "_index-kRwWHyEk.js",
+      "_ResponsiveNavLink-BWydkspo.js",
+      "_barberlogo-CCddF666.js",
+      "_transition-DKRl218_.js",
+      "_iconBase-wn5QK0Z3.js"
+    ]
+  },
+  "resources/js/Pages/Profile/Edit.tsx": {
+    "file": "assets/Edit-BgS7_ScW.js",
+    "name": "Edit",
+    "src": "resources/js/Pages/Profile/Edit.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_AuthenticatedLayout-B9DB669g.js",
+      "resources/js/Pages/Profile/Partials/DeleteUserForm.tsx",
+      "resources/js/Pages/Profile/Partials/UpdatePasswordForm.tsx",
+      "resources/js/Pages/Profile/Partials/UpdateProfileInformationForm.tsx",
+      "_ResponsiveNavLink-BWydkspo.js",
+      "_barberlogo-CCddF666.js",
+      "_transition-DKRl218_.js",
+      "_TextInput-Kkq3SxrG.js",
+      "_InputLabel-BKf6ruEm.js",
+      "_PrimaryButton-BcIaaWaV.js"
+    ]
+  },
+  "resources/js/Pages/Profile/Partials/DeleteUserForm.tsx": {
+    "file": "assets/DeleteUserForm-j9tX9L7_.js",
+    "name": "DeleteUserForm",
+    "src": "resources/js/Pages/Profile/Partials/DeleteUserForm.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_TextInput-Kkq3SxrG.js",
+      "_InputLabel-BKf6ruEm.js",
+      "_transition-DKRl218_.js"
+    ]
+  },
+  "resources/js/Pages/Profile/Partials/UpdatePasswordForm.tsx": {
+    "file": "assets/UpdatePasswordForm-B7ZH4Pm0.js",
+    "name": "UpdatePasswordForm",
+    "src": "resources/js/Pages/Profile/Partials/UpdatePasswordForm.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_TextInput-Kkq3SxrG.js",
+      "_InputLabel-BKf6ruEm.js",
+      "_PrimaryButton-BcIaaWaV.js",
+      "_transition-DKRl218_.js"
+    ]
+  },
+  "resources/js/Pages/Profile/Partials/UpdateProfileInformationForm.tsx": {
+    "file": "assets/UpdateProfileInformationForm-DU0mBgWK.js",
+    "name": "UpdateProfileInformationForm",
+    "src": "resources/js/Pages/Profile/Partials/UpdateProfileInformationForm.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_TextInput-Kkq3SxrG.js",
+      "_InputLabel-BKf6ruEm.js",
+      "_PrimaryButton-BcIaaWaV.js",
+      "_transition-DKRl218_.js"
+    ]
+  },
+  "resources/js/Pages/Welcome.tsx": {
+    "file": "assets/Welcome-DPFSnNiP.js",
+    "name": "Welcome",
+    "src": "resources/js/Pages/Welcome.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "resources/js/Pages/headerfull/header.tsx",
+      "resources/js/Pages/header/header.tsx",
+      "resources/js/Pages/contenuepg/contenupg.tsx",
+      "resources/js/Pages/footer/footer.tsx",
+      "_index-BOuRXsCu.js",
+      "_iconBase-wn5QK0Z3.js",
+      "_index-xo0AcSJE.js",
+      "_index-kRwWHyEk.js",
+      "_index-DfHXDm4O.js"
+    ]
+  },
+  "resources/js/Pages/caissierpage/caissierPage.tsx": {
+    "file": "assets/caissierPage-OB7o1aKR.js",
+    "name": "caissierPage",
+    "src": "resources/js/Pages/caissierpage/caissierPage.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_AuthenticatedLayoutcaissier-Da-n7tXx.js",
+      "_index-kRwWHyEk.js",
+      "_index-Dc8vIfrn.js",
+      "_ResponsiveNavLink-BWydkspo.js",
+      "_barberlogo-CCddF666.js",
+      "_transition-DKRl218_.js",
+      "_iconBase-wn5QK0Z3.js"
+    ]
+  },
+  "resources/js/Pages/caissierpage/historiquePage.tsx": {
+    "file": "assets/historiquePage-C0BQL4IY.js",
+    "name": "historiquePage",
+    "src": "resources/js/Pages/caissierpage/historiquePage.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_AuthenticatedLayoutcaissier-Da-n7tXx.js",
+      "_index-kRwWHyEk.js",
+      "_index-Dc8vIfrn.js",
+      "_ResponsiveNavLink-BWydkspo.js",
+      "_barberlogo-CCddF666.js",
+      "_transition-DKRl218_.js",
+      "_iconBase-wn5QK0Z3.js"
+    ]
+  },
+  "resources/js/Pages/caissierpage/paiementPage.tsx": {
+    "file": "assets/paiementPage-CpN3i9QV.js",
+    "name": "paiementPage",
+    "src": "resources/js/Pages/caissierpage/paiementPage.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_AuthenticatedLayoutcaissier-Da-n7tXx.js",
+      "_index-kRwWHyEk.js",
+      "_index-Dc8vIfrn.js",
+      "_ResponsiveNavLink-BWydkspo.js",
+      "_barberlogo-CCddF666.js",
+      "_transition-DKRl218_.js",
+      "_iconBase-wn5QK0Z3.js"
+    ]
+  },
+  "resources/js/Pages/contenuepg/contenupg.tsx": {
+    "file": "assets/contenupg-CAeEqwVF.js",
+    "name": "contenupg",
+    "src": "resources/js/Pages/contenuepg/contenupg.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_index-BOuRXsCu.js",
+      "_index-kRwWHyEk.js",
+      "_index-DfHXDm4O.js",
+      "_iconBase-wn5QK0Z3.js"
+    ],
+    "css": [
+      "assets/contenupg-bf3Fr1w0.css"
+    ],
+    "assets": [
+      "assets/5985dcd39abf440001d1ff06_bg-text-branca.jpg-Ck5unAVx.jpeg",
+      "assets/59c48c1cb7ea86000189d6ae_cadeira-slide-intro.jpg-CfPKHcPS.jpeg",
+      "assets/5985dcd399d894000123ef02_bg-tigolos.jpg-DqZwNA2N.jpeg",
+      "assets/barberlogo-Bc99PHkB.png",
+      "assets/59863aff1c3cee0001f83906_mascara-tijolos-bottom.jpg-BT5X1-bA.jpeg"
+    ]
+  },
+  "resources/js/Pages/footer/footer.tsx": {
+    "file": "assets/footer-DpOqKJHH.js",
+    "name": "footer",
+    "src": "resources/js/Pages/footer/footer.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_index-BOuRXsCu.js",
+      "_index-kRwWHyEk.js",
+      "_iconBase-wn5QK0Z3.js"
+    ],
+    "css": [
+      "assets/footer-COcVD8M5.css"
+    ],
+    "assets": [
+      "assets/5985dcd399d894000123ef02_bg-tigolos.jpg-DqZwNA2N.jpeg"
+    ]
+  },
+  "resources/js/Pages/gestionnaireadmin/gestAdmin.tsx": {
+    "file": "assets/gestAdmin-C2-hvhc3.js",
+    "name": "gestAdmin",
+    "src": "resources/js/Pages/gestionnaireadmin/gestAdmin.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_AuthenticatedLayout-B9DB669g.js",
+      "_index-Dc8vIfrn.js",
+      "_index-xo0AcSJE.js",
+      "_index-DfHXDm4O.js",
+      "_iconBase-wn5QK0Z3.js",
+      "_index-kRwWHyEk.js",
+      "resources/js/Pages/popupCutilisateur/popuputilisateur.tsx",
+      "resources/js/Pages/popupCutilisateur/popupcoiffeuradd.tsx",
+      "resources/js/Pages/popupCutilisateur/popupSalonAddcopy.tsx",
+      "resources/js/Pages/popupCutilisateur/popupClientAddcopy.tsx",
+      "resources/js/Pages/popupCutilisateur/popupDeleteUser.tsx",
+      "resources/js/Pages/popupCutilisateur/popupDeleteCoiffeur.tsx",
+      "resources/js/Pages/popupCutilisateur/popupDeleteSalon.tsx",
+      "resources/js/Pages/popupCutilisateur/popupDeleteClient.tsx",
+      "_ResponsiveNavLink-BWydkspo.js",
+      "_barberlogo-CCddF666.js",
+      "_transition-DKRl218_.js",
+      "_popupuser.module-Ck2_fLBJ.js",
+      "_TextInput-Kkq3SxrG.js",
+      "_InputLabel-BKf6ruEm.js",
+      "resources/js/Pages/popupCutilisateur/popupDeleteSearch.tsx"
+    ],
+    "css": [
+      "assets/gestAdmin-DnHsgo1z.css"
+    ]
+  },
+  "resources/js/Pages/header/header.tsx": {
+    "file": "assets/header-C2dhTEh3.js",
+    "name": "header",
+    "src": "resources/js/Pages/header/header.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_index-xo0AcSJE.js",
+      "_iconBase-wn5QK0Z3.js"
+    ],
+    "css": [
+      "assets/header-BK2WnzPJ.css"
+    ],
+    "assets": [
+      "assets/barberlogo-Bc99PHkB.png"
+    ]
+  },
+  "resources/js/Pages/headerfull/header.tsx": {
+    "file": "assets/header-B0SonFae.js",
+    "name": "header",
+    "src": "resources/js/Pages/headerfull/header.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_index-BOuRXsCu.js",
+      "_iconBase-wn5QK0Z3.js"
+    ],
+    "css": [
+      "assets/header-hXR4fLAL.css"
+    ],
+    "assets": [
+      "assets/5985dcd8399f94000113ebf4_img-bg-header-home.jpg-DQrBrGnM.jpeg",
+      "assets/59dcd192a377e500011be184_mascara-tijolos-header-1800px-lSU4xePR.png"
+    ]
+  },
+  "resources/js/Pages/popupCutilisateur/popupClientAddcopy.tsx": {
+    "file": "assets/popupClientAddcopy-UcVM0PS2.js",
+    "name": "popupClientAddcopy",
+    "src": "resources/js/Pages/popupCutilisateur/popupClientAddcopy.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_popupuser.module-Ck2_fLBJ.js",
+      "_TextInput-Kkq3SxrG.js",
+      "_InputLabel-BKf6ruEm.js"
+    ]
+  },
+  "resources/js/Pages/popupCutilisateur/popupDeleteClient.tsx": {
+    "file": "assets/popupDeleteClient-CR_v4Sz8.js",
+    "name": "popupDeleteClient",
+    "src": "resources/js/Pages/popupCutilisateur/popupDeleteClient.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "resources/js/Pages/popupCutilisateur/popupDeleteSearch.tsx",
+      "_index-kRwWHyEk.js",
+      "_popupuser.module-Ck2_fLBJ.js",
+      "_iconBase-wn5QK0Z3.js"
+    ]
+  },
+  "resources/js/Pages/popupCutilisateur/popupDeleteCoiffeur.tsx": {
+    "file": "assets/popupDeleteCoiffeur-BqMi9384.js",
+    "name": "popupDeleteCoiffeur",
+    "src": "resources/js/Pages/popupCutilisateur/popupDeleteCoiffeur.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "resources/js/Pages/popupCutilisateur/popupDeleteSearch.tsx",
+      "_index-DfHXDm4O.js",
+      "_popupuser.module-Ck2_fLBJ.js",
+      "_index-kRwWHyEk.js",
+      "_iconBase-wn5QK0Z3.js"
+    ]
+  },
+  "resources/js/Pages/popupCutilisateur/popupDeleteSalon.tsx": {
+    "file": "assets/popupDeleteSalon-26xKeDl6.js",
+    "name": "popupDeleteSalon",
+    "src": "resources/js/Pages/popupCutilisateur/popupDeleteSalon.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "resources/js/Pages/popupCutilisateur/popupDeleteSearch.tsx",
+      "_index-kRwWHyEk.js",
+      "_popupuser.module-Ck2_fLBJ.js",
+      "_iconBase-wn5QK0Z3.js"
+    ]
+  },
+  "resources/js/Pages/popupCutilisateur/popupDeleteSearch.tsx": {
+    "file": "assets/popupDeleteSearch-DwBJViTa.js",
+    "name": "popupDeleteSearch",
+    "src": "resources/js/Pages/popupCutilisateur/popupDeleteSearch.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_popupuser.module-Ck2_fLBJ.js",
+      "_index-kRwWHyEk.js",
+      "_iconBase-wn5QK0Z3.js"
+    ]
+  },
+  "resources/js/Pages/popupCutilisateur/popupDeleteUser.tsx": {
+    "file": "assets/popupDeleteUser-BJ082YDe.js",
+    "name": "popupDeleteUser",
+    "src": "resources/js/Pages/popupCutilisateur/popupDeleteUser.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "resources/js/Pages/popupCutilisateur/popupDeleteSearch.tsx",
+      "_index-kRwWHyEk.js",
+      "_popupuser.module-Ck2_fLBJ.js",
+      "_iconBase-wn5QK0Z3.js"
+    ]
+  },
+  "resources/js/Pages/popupCutilisateur/popupSalonAddcopy.tsx": {
+    "file": "assets/popupSalonAddcopy-DWFLPwLM.js",
+    "name": "popupSalonAddcopy",
+    "src": "resources/js/Pages/popupCutilisateur/popupSalonAddcopy.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_popupuser.module-Ck2_fLBJ.js",
+      "_TextInput-Kkq3SxrG.js",
+      "_InputLabel-BKf6ruEm.js"
+    ]
+  },
+  "resources/js/Pages/popupCutilisateur/popupcoiffeuradd.tsx": {
+    "file": "assets/popupcoiffeuradd-CHauwEL4.js",
+    "name": "popupcoiffeuradd",
+    "src": "resources/js/Pages/popupCutilisateur/popupcoiffeuradd.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_popupuser.module-Ck2_fLBJ.js",
+      "_TextInput-Kkq3SxrG.js",
+      "_InputLabel-BKf6ruEm.js"
+    ]
+  },
+  "resources/js/Pages/popupCutilisateur/popuputilisateur.tsx": {
+    "file": "assets/popuputilisateur-hbxiGZ72.js",
+    "name": "popuputilisateur",
+    "src": "resources/js/Pages/popupCutilisateur/popuputilisateur.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_popupuser.module-Ck2_fLBJ.js",
+      "_TextInput-Kkq3SxrG.js",
+      "_InputLabel-BKf6ruEm.js"
+    ]
+  },
+  "resources/js/app.tsx": {
+    "file": "assets/app-CvuLb3Vv.js",
+    "name": "app",
+    "src": "resources/js/app.tsx",
+    "isEntry": true,
+    "dynamicImports": [
+      "resources/js/Pages/Auth/ConfirmPassword.tsx",
+      "resources/js/Pages/Auth/ForgotPassword.tsx",
+      "resources/js/Pages/Auth/Login.tsx",
+      "resources/js/Pages/Auth/Register.tsx",
+      "resources/js/Pages/Auth/ResetPassword.tsx",
+      "resources/js/Pages/Auth/VerifyEmail.tsx",
+      "resources/js/Pages/Dashboard.tsx",
+      "resources/js/Pages/Historique/Index.tsx",
+      "resources/js/Pages/Profile/Edit.tsx",
+      "resources/js/Pages/Profile/Partials/DeleteUserForm.tsx",
+      "resources/js/Pages/Profile/Partials/UpdatePasswordForm.tsx",
+      "resources/js/Pages/Profile/Partials/UpdateProfileInformationForm.tsx",
+      "resources/js/Pages/Welcome.tsx",
+      "resources/js/Pages/caissierpage/caissierPage.tsx",
+      "resources/js/Pages/caissierpage/historiquePage.tsx",
+      "resources/js/Pages/caissierpage/paiementPage.tsx",
+      "resources/js/Pages/contenuepg/contenupg.tsx",
+      "resources/js/Pages/footer/footer.tsx",
+      "resources/js/Pages/gestionnaireadmin/gestAdmin.tsx",
+      "resources/js/Pages/header/header.tsx",
+      "resources/js/Pages/headerfull/header.tsx",
+      "resources/js/Pages/popupCutilisateur/popupClientAddcopy.tsx",
+      "resources/js/Pages/popupCutilisateur/popupDeleteClient.tsx",
+      "resources/js/Pages/popupCutilisateur/popupDeleteCoiffeur.tsx",
+      "resources/js/Pages/popupCutilisateur/popupDeleteSalon.tsx",
+      "resources/js/Pages/popupCutilisateur/popupDeleteSearch.tsx",
+      "resources/js/Pages/popupCutilisateur/popupDeleteUser.tsx",
+      "resources/js/Pages/popupCutilisateur/popupSalonAddcopy.tsx",
+      "resources/js/Pages/popupCutilisateur/popupcoiffeuradd.tsx",
+      "resources/js/Pages/popupCutilisateur/popuputilisateur.tsx"
+    ],
+    "css": [
+      "assets/app-DQwceuQL.css"
+    ]
+  }
+}
